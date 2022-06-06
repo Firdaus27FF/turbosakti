@@ -16,7 +16,7 @@
                                 <a class="btn btn-warning mb-2 text-light" href="{{route('pelanggan.create')}}">
                                     Tambah Pelanggan
                                 </a>
-                            </div>    
+                            </div>
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
@@ -27,7 +27,6 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
                                             <th>No. Tlp</th>
@@ -36,7 +35,6 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>No</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
                                             <th>No. Tlp</th>
@@ -46,17 +44,16 @@
                                     <tbody>
                                         @foreach($datapelanggan as $p)
                                         <tr>
-                                            <td>{{ $no++ }}</td>
                                             <td>{{ $p->nama }}</td>
                                             <td>{{ $p->alamat }}</td>
                                             <td>{{ $p->no_tlp }}</td>
                                             <td>
-                                                <a href="{{ route('pelanggan.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
+                                                <a href="{{ route('pelanggan.edit',$p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('pelanggan.destroy', $p->id)}}" method="post" style="display:inline">
+                                                    @method('delete')
                                                     @csrf
-                                                    @method('DELETE')
                                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
-                                                </form>    
+                                                </form>
                                             </td>
                                         </tr>
                                         @endforeach
