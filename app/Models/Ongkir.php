@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PrediksiPenjualan extends Model
+class Ongkir extends Model
 {
     use HasFactory;
 
-    protected $table ='prediksi_penjualan';
+    protected $table ='ongkir';
     protected $primarykey ='id';
-    protected $fillable = ['id', 'jadwal', 'hasil_jumlah_produk', 'hasil_bersih'];
+    protected $fillable = ['id', 'nama_order', 'tanggal', 'berat', 'kurir', 'status'];
 }

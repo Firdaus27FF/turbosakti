@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\DataPelanggan;
+use App\Models\DetailPelanggan;
 
-class DataPelangganSeeder extends Seeder
+class DetailPelangganSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,9 +14,7 @@ class DataPelangganSeeder extends Seeder
      */
     public function run()
     {
-        DataPelanggan::create([
-            'username'=>'CobaDulu12',
-            'password'=>'DuluCoba12',
+        DetailPelanggan::create([
             'nama'=>'Ach. Dani',
             'alamat'=>'Jl. Kembang Api No.11 C',
             'no_tlp'=>'087342342342'

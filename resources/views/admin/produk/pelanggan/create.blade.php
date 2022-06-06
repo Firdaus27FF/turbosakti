@@ -14,30 +14,30 @@
             </div>
         </div>
         <div class="card mb-4">
-            <div class="card-header">
-                <h3>Tambah Pelanggan</h3>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <label>username</label>
-                    <input type="text" class="form-control">
-                    <label>Password</label>
-                    <input type="text" class="form-control mb-3">
-                    <label>Nama</label>
-                    <input type="text" class="form-control mb-3">
-                    <label>Alamat</label>
-                    <input type="text" class="form-control mb-3">
-                    <label>No. Tlp</label>
-                    <input type="text" class="form-control mb-3">
+            <form action="{{ route(pelanggan.store ) }}" method="POST">
+                @csrf
+                <div class="card-header">
+                    Data Pelanggan
                 </div>
-            </div>
-            <div class="row px-3 mb-3">
-                <div class="col-md-1">
-                        <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" class="form-control mb-3" name="nama">
+                        <label>Alamat</label>
+                        <input type="text" class="form-control mb-3"name="alamat">
+                        <label>No. Tlp</label>
+                        <input type="text" class="form-control mb-3"name="no_tlp">
+                    </div>
                 </div>
-                <div class="col-md-1">
-                    <a href="{{route('prediksipenjualan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                <div class="row px-3 mb-3">
+                    <div class="col-md-1">
+                            <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="{{route('pelanggan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                    </div>
                 </div>
+            </form>
             </div>
         </div>
     </div>

@@ -15,24 +15,37 @@
         </div>
         <div class="card mb-4">
             <div class="card-header">
-                <h3>Tambah Stok</h3>
+            <div class="card-body">
+                Data Stok Produk
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <label>Jumlah</label>
-                    <input type="text" class="form-control mb-3">
-                    <label>Tanggal Produksi</label>
-                    <input type="date" class="form-control mb-3">
-                    <label>Harga Per Ball</label>
-                    <input type="text" class="form-control mb-3">
-                </div>
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div><br />
+                    @endif
+                    <form method="post" action="{{ route('stok.index') }}">
+                    <div class="form-group">
+                    @csrf
+                        <label>Jumlah</label>
+                        <input type="text" class="form-control mb-3">
+                        <label>Tanggal Produksi</label>
+                        <input type="date" class="form-control mb-3">
+                        <label>Harga Per Ball</label>
+                        <input type="text" class="form-control mb-3">
+                    </div>
             </div>
             <div class="row px-3 mb-3">
                 <div class="col-md-1">
                         <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="{{route('prediksipenjualan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                    <a href="{{route('stok.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                 </div>
             </div>
         </div>

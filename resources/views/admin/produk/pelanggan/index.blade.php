@@ -16,7 +16,7 @@
                                 <a class="btn btn-warning mb-2 text-light" href="{{route('pelanggan.create')}}">
                                     Tambah Pelanggan
                                 </a>
-                            </div>
+                            </div>    
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
@@ -28,8 +28,6 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>username</th>
-                                            <th>Password</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
                                             <th>No. Tlp</th>
@@ -39,8 +37,6 @@
                                     <tfoot>
                                         <tr>
                                             <th>No</th>
-                                            <th>username</th>
-                                            <th>Password</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
                                             <th>No. Tlp</th>
@@ -51,14 +47,16 @@
                                         @foreach($datapelanggan as $p)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $p->username }}</td>
-                                            <td>{{ $p->password }}</td>
-                                            <td>{{ $p->name }}</td>
+                                            <td>{{ $p->nama }}</td>
                                             <td>{{ $p->alamat }}</td>
                                             <td>{{ $p->no_tlp }}</td>
-                                            <td class="text-center">
-                                            <button type="button" class="btn btn-md btn-danger mx-1"> <ion-icon name="trash-outline"></ion-icon></ion-icon></button>
-                                            <button type="button" class="btn btn-md btn-warning mx-1"> <ion-icon name="pencil-outline"></ion-icon></button>
+                                            <td>
+                                                <a href="{{ route('pelanggan.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
+                                                <form action="{{ route('pelanggan.destroy', $p->id)}}" method="post" style="display:inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
+                                                </form>    
                                             </td>
                                         </tr>
                                         @endforeach

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\jenisproduk;
+use App\Models\JenisProduk;
 
 class jenisprodukcontroller extends Controller
 {
@@ -12,15 +12,16 @@ class jenisprodukcontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $produk = jenisproduk::all();
-        $no = 1;
-        return view('admin.produk.jenisproduk.index', compact('produk', 'no'));
+        $produk = jenisProduk::all();
+        return view('admin.produk.jenisproduk.index', compact('produk'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        // $produk['jenis'] = 'Tambah User';
+        // $produk['jenis'] = ['admin' => 'Admin', 'jenis' => 'jenis'];
         return view('admin.produk.jenisproduk.create');
     }
 
@@ -38,11 +39,13 @@ class jenisprodukcontroller extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $this->validate([
             'rasa' => 'required|max:255',
             'harga_jual' => 'required',
+            'foto'  => 'required|max:255',
         ]);
-        $show = JenisProduk::create($validatedData);
+        $data = $request->all();
+        $show = JenisProduk::create($data);
    
         return redirect('/jenis')->with('success', 'Data sudah tersimpan');
     }
@@ -66,9 +69,9 @@ class jenisprodukcontroller extends Controller
      */
     public function edit($id)
     {
-        $produk = jenisproduk::findOrFail($id);
+        $produk = JenisProduk::findOrFail($id);
 
-        return view('edit', compact('produk'));
+        return view('admin.produk.jenisproduk.edit', compact('produk'));
     }
 
     /**
@@ -81,9 +84,15 @@ class jenisprodukcontroller extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
+            'gambar' => 'required',
             'rasa' => 'required|max:255',
-            'harga_jual' => 'required'
+            'harga_jual' => 'required',
         ]);
+        $produk = produk::find($id);
+        $produk->gambar = $request->gambar;
+        $produk->rasa = $request->rasa;
+        $produk->harga_jual = $request->harga_jual;
+        $produk->save();
         jenisproduk::whereId($id)->update($validatedData);
 
         return redirect('/jenis')->with('success', 'Data selesai di update');
@@ -97,9 +106,9 @@ class jenisprodukcontroller extends Controller
      */
     public function destroy($id)
     {
-        $produk = jenisproduk::findOrFail($id);
+        $produk = JenisProduk::findOrFail($id);
         $produk->delete();
 
-        return redirect('/produk')->with('success', 'Data sudah di hapus');
+        return back()->with('success', 'Data sudah di hapus');
     }
 }

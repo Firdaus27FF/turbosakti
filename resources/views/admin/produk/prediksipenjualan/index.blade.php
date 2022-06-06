@@ -50,9 +50,13 @@
                                             <td>{{ $p->jadwal }}</td>
                                             <td>{{ $p->hasil_jumlah_produk }}</td>
                                             <td>{{ $p->hasil_bersih }}</td>
-                                            <td class="text-center">
-                                            <button type="button" class="btn btn-md btn-danger mx-1"> <ion-icon name="trash-outline"></ion-icon></ion-icon></button>
-                                            <button type="button" class="btn btn-md btn-warning mx-1"> <ion-icon name="pencil-outline"></ion-icon></button>
+                                            <td>
+                                                <a href="{{ route('prediksipenjualan.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
+                                                <form action="{{ route('prediksipenjualan.destroy', $p->id)}}" method="post" style="display:inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
+                                                </form>    
                                             </td>
                                         </tr>
                                         @endforeach

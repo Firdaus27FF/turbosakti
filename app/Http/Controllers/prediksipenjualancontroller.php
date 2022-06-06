@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\prediksipenjualan;
+use App\Models\PrediksiPenjualan;
 
 class prediksipenjualancontroller extends Controller
 {
@@ -14,7 +14,7 @@ class prediksipenjualancontroller extends Controller
      */
     public function index()
     {
-        $prediksipenjualan = prediksipenjualan::all();
+        $prediksipenjualan = PrediksiPenjualan::all();
         $no = 1;
         return view('admin.produk.prediksipenjualan.index', compact('prediksipenjualan', 'no'));
 
@@ -38,7 +38,14 @@ class prediksipenjualancontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'jadwal' => 'required|max:25',
+            'hasil_jumlah_produk' => 'required',
+            'hasil_bersih' => 'required',
+        ]);
+        $show = prediksipenjualan::create($validatedData);
+   
+        return redirect('/prediksipenjualan')->with('success', 'Data sudah tersimpan');
     }
 
     /**
@@ -60,7 +67,9 @@ class prediksipenjualancontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $prediksipenjualan = PrediksiPenjualan::findOrFail($id);
+
+        return view('admin.produk.prediksipenjualan.edit', compact('prediksipenjualan'));
     }
 
     /**
@@ -72,7 +81,14 @@ class prediksipenjualancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'jadwal' => 'required|max:25',
+            'hasil_jumlah_produk' => 'required',
+            'hasil_bersih' => 'required',
+        ]);
+        prediksipenjualan::whereId($id)->update($validatedData);
+
+        return redirect('/prediksipenjualan')->with('success', 'Data selesai di update');
     }
 
     /**
@@ -83,6 +99,9 @@ class prediksipenjualancontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $prediksipenjualan = PrediksiPenjualan::findOrFail($id);
+        $prediksipenjualan->delete();
+
+        return back()->with('success', 'Data sudah di hapus');
     }
 }

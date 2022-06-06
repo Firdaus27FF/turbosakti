@@ -15,30 +15,34 @@
         </div>
         <div class="card mb-4">
             <div class="card-header">
-                <h3>Tambah Ongkir</h3>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <label>Nama Order</label>
-                    <input type="text" class="form-control mb-3">
-                    <label>Tanggal</label>
-                    <input type="date" class="form-control mb-3">
-                    <label>Berat</label>
-                    <input type="text" class="form-control mb-3">
-                    <label>Kurir</label>
-                    <input type="text" class="form-control mb-3">
-                    <label>Status</label>
-                    <input type="text" class="form-control mb-3">
+            <form action="{{ route(ongkir.store ) }}" method="POST">
+                @csrf
+                <div class="card-header">
+                    Data Ongkos Kirim
                 </div>
-            </div>
-            <div class="row px-3 mb-3">
-                <div class="col-md-1">
-                        <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Nama Order</label>
+                        <input type="text" class="form-control mb-3" name="nama_order">
+                        <label>Tanggal</label>
+                        <input type="date" class="form-control mb-3"name="tanggal">
+                        <label>Berat</label>
+                        <input type="text" class="form-control mb-3"name="berat">
+                        <label>Kurir</label>
+                        <input type="text" class="form-control mb-3"name="kurir">
+                        <label>Status</label>
+                        <input type="text" class="form-control mb-3"name="status">
+                    </div>
                 </div>
-                <div class="col-md-1">
-                    <a href="{{route('prediksipenjualan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                <div class="row px-3 mb-3">
+                    <div class="col-md-1">
+                            <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="{{route('ongkir.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </main>

@@ -15,15 +15,16 @@
         </div>
         <div class="card mb-4">
             <div class="card-header">
-                <h3>Tambah Prediksi</h3>
+            <div class="card-body">
+                Data Prediksi Penjualan
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <label>jadwal</label>
+                    <label>jadwal : </label>
                     <input type="text" class="form-control mb-3">
-                    <label>Hasil Jumlah Produk</label>
+                    <label>Hasil Jumlah Produk :</label>
                     <input type="text" class="form-control mb-3">
-                    <label>Hasil Bersih</label>
+                    <label>Hasil Bersih :</label>
                     <input type="text" class="form-control mb-3">
                 </div>
             </div>

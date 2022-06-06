@@ -15,7 +15,8 @@
         </div>
         <div class="card mb-4">
             <div class="card-header">
-                <h3>Tambah Produk</h3>
+            <div class="card-body">
+                Data Jenis Produk
             </div>
             <div class="card-body">
             @if ($errors->any())
@@ -27,16 +28,15 @@
                 </ul>
             </div><br />
             @endif
-            <form method="post" action="{{ route('produk.index') }}">
+            <form method="post" action="{{ route('jenis.index') }}">
                 <div class="form-group">
                     @csrf
                     <label>Gambar :</label>
                     <input type="file" name="image" class="form-control mb-3" placeholder="image">
-                    <input type="text" class="form-control mb-3">
                     <label>Rasa :</label>
-                    <input type="text" class="form-control mb-3">
+                    <input type="text" class="form-control mb-3" name="rasa">
                     <label>Harga Jual :</label>
-                    <input type="text" class="form-control mb-3">
+                    <input type="text" class="form-control mb-3"name="harga_jual">
                 </div>
             </div>
             <div class="row px-3 mb-3">
@@ -44,7 +44,7 @@
                         <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="{{ route('jenisproduk.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                    <a href="{{ route('jenis.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                 </div>
             </form>
             </div>

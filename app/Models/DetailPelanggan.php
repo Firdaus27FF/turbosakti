@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class datapelanggan extends Model
+class DetailPelanggan extends Model
 {
     use HasFactory;
 
-    protected $table ='data_pelanggan';
-    protected $primarykey ='id';
-    protected $fillable = ['id', 'username', 'password', 'nama', 'alamat', 'no_tlp'];
-
+    protected $table = 'detail_pelanggan';
+    protected $guarded =[];
 
     public function pemesanan()
     {

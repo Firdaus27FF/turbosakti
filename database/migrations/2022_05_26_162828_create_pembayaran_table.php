@@ -15,7 +15,7 @@ class CreatePembayaranTable extends Migration
     {
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('pelanggan_id')->constrained('data_pelanggan');
+            $table->foreignId('pelanggan_id')->constrained('detail_pelanggan');
             $table->string('nama_order');
             $table->date('tanggal');
             $table->string('bayar');

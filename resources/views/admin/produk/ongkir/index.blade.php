@@ -48,30 +48,24 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                    @foreach($ongkir as $p)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Moh. Ramli</td>
-                                            <td>27-03-2022</td>
-                                            <td>2 kg</td>
-                                            <td>JNE</td>
-                                            <td>selesai</td>
-                                            <td class="text-center">
-                                            <button type="button" class="btn btn-md btn-danger mx-1"> <ion-icon name="trash-outline"></ion-icon></ion-icon></button>
-                                            <button type="button" class="btn btn-md btn-warning mx-1"> <ion-icon name="pencil-outline"></ion-icon></button>
+                                            <td>{{ $no++ }}</td>
+                                            <td>{{ $p->nama_order }}</td>
+                                            <td>{{ $p->tanggal }}</td>
+                                            <td>{{ $p->berat }}</td>
+                                            <td>{{ $p->kurir }}</td>
+                                            <td>{{ $p->status }}</td>
+                                            <td>
+                                                <a href="{{ route('ongkir.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
+                                                <form action="{{ route('ongkir.destroy', $p->id)}}" method="post" style="display:inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
+                                                </form>    
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Moh.Gani</td>
-                                            <td>28-01-2022</td>
-                                            <td>3 kg</td>
-                                            <td>JNT</td>
-                                            <td>proses pengiriman</td>
-                                            <td class="text-center">
-                                            <button type="button" class="btn btn-md btn-danger mx-1"> <ion-icon name="trash-outline"></ion-icon></ion-icon></button>
-                                            <button type="button" class="btn btn-md btn-warning mx-1"> <ion-icon name="pencil-outline"></ion-icon></button>
-                                            </td>
-                                        </tr> 
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

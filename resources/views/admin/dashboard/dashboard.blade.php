@@ -6,42 +6,61 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row">
-                            <div class="col-xl-3 col-md-2">
-                                <div class="card bg-turbo1 text-white mb-2">
-                                    <div class="card-body">Laba Kotor</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                        <div class="small-box bg-turbo mb-4">
+                            <div class="inner">
+                                <h5>Laba Bersih</h5>
+                                <p>5.000.000<sup style="font-size: 20px"></sup></p>
                             </div>
-                            <div class="col-xl-3 col-md-2">                                
-                                <div class="card bg-turbo1 text-white mb-4">
-                                    <div class="card-body">Laba Bersih</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
                             </div>
-                            <div class="col-xl-3 col-md-2">                                
-                                <div class="card bg-turbo1 text-white mb-2">
-                                    <div class="card-body">Total Penjualan</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
+                            <a href="{{ route('prediksipenjualan.index')}}" class="small-box-footer text-light">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                            <div class="col-xl-3 col-md-2">                                
-                                <div class="card bg-turbo1 text-white mb-2">
-                                    <div class="card-body">Data Pelanggan</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div> 
-                                </div>
-                            </div> 
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-turbo">
+                            <div class="inner">
+                                <h5>Jumlah Pengeluaran</h5>
+                                <p>1.200.000<sup style="font-size: 20px"></sup></p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="{{ route('catatkeuangan.index')}}" class="small-box-footer text-light">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-turbo">
+                            <div class="inner">
+                                <h5>Jumlah Pemasukan</h5>
+                                <p>1.100.000<sup style="font-size: 20px"></sup></p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="{{ route('catatkeuangan.index')}}" class="small-box-footer text-light">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-turbo">
+                            <div class="inner">
+                                <h5>User</h5>
+                                <p>1<sup style="font-size: 20px"></sup></p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="{{ route('pelanggan.index')}}" class="small-box-footer text-light">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div> 
                             <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
@@ -62,7 +81,6 @@
                                 </div>
                             </div>
                         </div> 
-                        
                         </div>
                         
 

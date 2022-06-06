@@ -15,7 +15,8 @@
         </div>
         <div class="card mb-4">
             <div class="card-header">
-                <h3>Tambah Pembayaran</h3>
+            <div class="card-body">
+                Data pembayaran
             </div>
             <div class="card-body">
                 <div class="form-group">
@@ -32,7 +33,7 @@
                         <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="{{route('prediksipenjualan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                    <a href="{{route('pembayaran.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                 </div>
             </div>
         </div>

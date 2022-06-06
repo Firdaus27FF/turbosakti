@@ -15,8 +15,10 @@ class CreatePemesananTable extends Migration
     {
         Schema::create('pemesanans', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('pelanggan_id')->constrained('data_pelanggan');
+            $table->foreignId('pelanggan_id')->constrained('detail_pelanggan');
+            $table->string('nama_order')->constrained('detail_pelanggan');
             $table->date('tanggal');
+            $table->string('nama_produk')->constrained('jenis_produks');
             $table->foreignId('produk_id')->constrained('jenis_produks');
             $table->integer('jumlah');
             $table->string('harga');

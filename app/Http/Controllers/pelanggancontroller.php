@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\datapelanggan;
+use App\Models\DetailPelanggan;
 
 class pelanggancontroller extends Controller
 {
@@ -14,9 +14,8 @@ class pelanggancontroller extends Controller
      */
     public function index()
     {
-        $datapelanggan = datapelanggan::all();
-        $no = 1;
-        return view('admin.produk.pelanggan.index', compact('datapelanggan', 'no'));
+        $datapelanggan = DetailPelanggan::all();
+        return view('admin.produk.pelanggan.index', compact('datapelanggan'));
     }
 
     /**
@@ -37,11 +36,20 @@ class pelanggancontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+        ]);
+        $data = $request->all();
+
+        $datas = DetailPelanggan::create($data);
+   
+        return redirect('{{ route(pelanggan.index)}}')->with('success', 'Data sudah tersimpan');
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resourc)e.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -59,7 +67,9 @@ class pelanggancontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $pelanggan = detailpelanggan::findOrFail($id);
+
+        return view('admin.produk.pelanggan.edit', compact('pelanggan'));
     }
 
     /**
@@ -71,7 +81,14 @@ class pelanggancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+        ]);
+        pelanggan::whereId($id)->update($validatedData);
+
+        return redirect('/pelanggan')->with('success', 'Data selesai di update');
     }
 
     /**
@@ -82,6 +99,9 @@ class pelanggancontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pelanggan = detailpelanggan::findOrFail($id);
+        $pelanggan->delete();
+
+        return back()->with('success', 'Data sudah di hapus');
     }
 }

@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\pelanggan;
+use App\Models\Pemesanan;
 
-class pembayaran extends Model
+class Pembayaran extends Model
 {
     use HasFactory;
 

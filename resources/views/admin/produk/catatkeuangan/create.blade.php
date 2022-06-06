@@ -15,15 +15,16 @@
         </div>
         <div class="card mb-4">
             <div class="card-header">
-                <h3>Tambah Catat Keuangan</h3>
+            <div class="card-body">
+                Data Pencatatan Keuangan
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <label>Jumlah</label>
+                    <label>Tanggal</label>
                     <input type="text" class="form-control mb-3">
-                    <label>Tanggal Produk</label>
-                    <input type="date" class="form-control mb-3">
-                    <label>Harga Per Ball</label>
+                    <label>Jumlah Pemasukan</label>
+                    <input type="text" class="form-control mb-3">
+                    <label>Jumlah Pengeluaran</label>
                     <input type="text" class="form-control mb-3">
                 </div>
             </div>
@@ -32,7 +33,7 @@
                         <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="{{route('prediksipenjualan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                    <a href="{{route('catatkeuangan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                 </div>
             </div>
         </div>

@@ -38,7 +38,14 @@ class catatkeuangancontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'tanggal' => 'required|max:255',
+            'jumlah_pemasukan' => 'required',
+            'jumla_pengeluaran' => 'required',
+        ]);
+        $show = Keuangan::create($validatedData);
+   
+        return redirect('/keuangan')->with('success', 'Data sudah tersimpan');
     }
 
     /**
@@ -60,7 +67,9 @@ class catatkeuangancontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $keuangan = keuangan::findOrFail($id);
+
+        return view('admin.produk.catatkeuangan.edit', compact('keuangan'));
     }
 
     /**
@@ -72,7 +81,14 @@ class catatkeuangancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'tanggal' => 'required|max:255',
+            'jumlah_pemasukan' => 'required',
+            'jumlah_pengeluaran' => 'required',
+        ]);
+        keuangan::whereId($id)->update($validatedData);
+
+        return redirect('/keuangan')->with('success', 'Data selesai di update');
     }
 
     /**
@@ -83,6 +99,9 @@ class catatkeuangancontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $keuangan = keuangan::findOrFail($id);
+        $keuangan->delete();
+
+        return back()->with('success', 'Data sudah di hapus');
     }
 }

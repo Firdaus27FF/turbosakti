@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\pemesanan;
+use App\Models\Pemesanan;
 
 class pemesanancontroller extends Controller
 {
@@ -38,7 +38,17 @@ class pemesanancontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_order' => 'required',
+            'tanggal' => 'required',
+            'nama_produk' => 'required',
+            'jumlah' => 'required',
+            'harga' => 'required',
+            'total_harga' => 'required',
+        ]);
+        $show = Pemesanan::create($validatedData);
+   
+        return redirect('/pemesanan')->with('success', 'Data sudah tersimpan');
     }
 
     /**
@@ -60,7 +70,9 @@ class pemesanancontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $pemesanan = Pemesanan::findOrFail($id);
+
+        return view('admin.produk.pemesanan.edit', compact('pemesanan'));
     }
 
     /**
@@ -72,7 +84,17 @@ class pemesanancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_order' => 'required',
+            'tanggal' => 'required',
+            'nama_produk' => 'required',
+            'jumlah' => 'required',
+            'harga' => 'required',
+            'total_harga' => 'required',
+        ]);
+        Pemesanan::whereId($id)->update($validatedData);
+
+        return redirect('/pemesanan')->with('success', 'Data selesai di update');
     }
 
     /**
@@ -83,6 +105,9 @@ class pemesanancontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pemesanan = Pemesanan::findOrFail($id);
+        $pemesanan->delete();
+
+        return back()->with('success', 'Data sudah di hapus');
     }
 }

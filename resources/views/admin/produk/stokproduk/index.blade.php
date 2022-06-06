@@ -13,8 +13,8 @@
                             <h2 class="mt-1 text-warning">Stok Produk</h2>
                             </div>
                             <div class="col-md-6 card-header text-end">
-                            <a class="btn btn-warning mb-2 text-light" href="{{route('stok.create')}}">
-                                    Tambah Stok
+                                <a class="btn btn-warning mb-2 text-light" href="{{route('stok.create')}}">
+                                    Tambah Stok 
                                 </a>
                             </div> 
                         </div>
@@ -44,15 +44,19 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach($stokproduk as $p)
+                                        @foreach($stok as $p)
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $p->jumlah }}</td>
                                             <td>{{ $p->tanggal_produksi }}</td>
                                             <td>{{ $p->harga_per_ball }}</td>
-                                            <td class="text-center">
-                                            <button type="button" class="btn btn-md btn-danger mx-1"> <ion-icon name="trash-outline"></ion-icon></ion-icon></button>
-                                            <button type="button" class="btn btn-md btn-warning mx-1"> <ion-icon name="pencil-outline"></ion-icon></button>
+                                            <td>
+                                                <a href="{{ route('stok.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
+                                                <form action="{{ route('stok.destroy', $p->id)}}" method="post" style="display:inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
+                                                </form>    
                                             </td>
                                         </tr>
                                         @endforeach

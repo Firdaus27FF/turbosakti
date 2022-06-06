@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(StokProdukSeeder::class);
         $this->call(KeuanganSeeder::class);
         $this->call(PrediksiPenjualanSeeder::class);
-        $this->call(DataPelangganSeeder::class);
+        $this->call(DetailPelangganSeeder::class);
         $this->call(PembayaranSeeder::class);
         $this->call(PemesananSeeder::class);
     }

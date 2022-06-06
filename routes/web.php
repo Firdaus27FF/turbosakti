@@ -33,6 +33,10 @@ Route::get('/users', function () {
     return view('users.index');
 })->name('user');
 
+route::get('/produk', function () {
+    return view('admin.produk.jenisproduk.index');
+})->name('produk'); 
+
 route::get('/stokproduk', function () {
     return view('admin.produk.stokproduk.index');
 })->name('stokproduk'); 
@@ -45,9 +49,9 @@ route::get('/prediksipenjualan', function () {
     return view('admin.produk.prediksipenjualan.index');
 })->name('prediksipenjualan');
 
-route::get('/pelanggan', function () {
-    return view('admin.produk.pelanggan.index');
-})->name('pelanggan'); 
+// route::get('/pelanggan', function () {
+//     return view('admin.produk.pelanggan.index');
+// })->name('pelanggan'); 
 
 route::get('/ongkir', function () {
     return view('admin.produk.ongkir.index');
@@ -64,17 +68,6 @@ route::get('/pembayaran', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-route::get('/dashboard', [dashboardcontroller::class,'index'])->name('dashboard');
-
 
 Route::resource('dashboard', dashboardcontroller::class);
 Route::resource('jenis', jenisprodukcontroller::class);

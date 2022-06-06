@@ -14,9 +14,9 @@ class stokprodukcontroller extends Controller
      */
     public function index()
     {
-        $stokproduk = stokproduk::all();
+        $stok = Stokproduk::all();
         $no = 1;
-        return view('admin.produk.stokproduk.index', compact('stokproduk', 'no'));
+        return view('admin.produk.stokproduk.index', compact('stok', 'no'));
     }
 
     /**
@@ -37,7 +37,14 @@ class stokprodukcontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'jumlah' => 'required|max:255',
+            'tanggal_produksi' => 'required',
+            'harga_per_ball' => 'required'
+        ]);
+        $show = StokProduk::create($validatedData);
+   
+        return redirect('/stok')->with('success', 'Data sudah tersimpan');
     }
 
     /**
@@ -48,7 +55,7 @@ class stokprodukcontroller extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -59,7 +66,9 @@ class stokprodukcontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $stok = stokproduk::findOrFail($id);
+
+        return view('admin.produk.stokproduk.edit', compact('stok'));
     }
 
     /**
@@ -71,7 +80,14 @@ class stokprodukcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'jumlah' => 'required|max:255',
+            'tanggal_produksi' => 'required',
+            'harga_per_ball' => 'required',
+        ]);
+        stokproduk::whereId($id)->update($validatedData);
+
+        return redirect('/stok')->with('success', 'Data selesai di update');
     }
 
     /**
@@ -82,6 +98,9 @@ class stokprodukcontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $stok = jenisproduk::findOrFail($id);
+        $stok->delete();
+
+        return back()->with('success', 'Data sudah di hapus');
     }
 }

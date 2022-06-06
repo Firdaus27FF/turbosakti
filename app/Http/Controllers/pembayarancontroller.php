@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\pembayaran;
+use App\Models\Pembayaran;
 
 class pembayarancontroller extends Controller
 {
@@ -14,7 +14,7 @@ class pembayarancontroller extends Controller
      */
     public function index()
     {
-        $pembayaran = pembayaran::all();
+        $pembayaran = Pembayaran::all();
         $no = 1;
         return view('admin.produk.pembayaran.index', compact('pembayaran', 'no'));
     }
@@ -37,7 +37,14 @@ class pembayarancontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_order' => 'required',
+            'tanggal' => 'required',
+            'bayar' => 'required'
+        ]);
+        $show = Pembayaran::create($validatedData);
+   
+        return redirect('/pembayaran')->with('success', 'Data sudah tersimpan');
     }
 
     /**
@@ -59,7 +66,9 @@ class pembayarancontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $pembayaran = Pembayaran::findOrFail($id);
+
+        return view('admin.produk.pembayaran.edit', compact('pembayaran'));
     }
 
     /**
@@ -71,7 +80,14 @@ class pembayarancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_order' => 'required',
+            'tanggal' => 'required',
+            'bayar' => 'required',
+        ]);
+        Pembayaran::whereId($id)->update($validatedData);
+
+        return redirect('/pembayaran')->with('success', 'Data selesai di update');
     }
 
     /**
@@ -82,6 +98,9 @@ class pembayarancontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pembayaran = Pembayaran::findOrFail($id);
+        $pembayaran->delete();
+
+        return back()->with('success', 'Data sudah di hapus');
     }
 }

@@ -11,12 +11,7 @@
                         <div class="row">
                             <div class="col-md-6 position-relative">
                             <h2 class="mt-1 text-warning">Jenis Product</h2>
-                            </div>
-                            <div class="col-md-6 card-header text-end">
-                                <a href="" class="btn btn-warning mb-2 text-light"  href="{{route('tambahjenisproduk')}}">
-                                    Update Jenis
-                                </a>
-                            </div>                            
+                            </div>                        
                         </div>
                             <div class="card mb-4">
                             <div class="card-header">
@@ -30,22 +25,29 @@
                                     </ul>
                                 </div><br />
                                 @endif
-                                <form method="post" action="{{ route('produk.update', $produk->id ) }}">
+                                <form method="post" action="{{ route('jenis.update', $produk->id ) }}">
                                     <div class="form-group">
                                         @csrf
                                         @method('PATCH')
                                         <label for="country_name">Gambar :</label>
-                                        <input type="text" class="form-control" name="name" value="{{ $produk->gambar }}"/>
+                                        <input type="file" class="form-control mb-3" name="image" placeholder="image"value="{{ $produk->gambar }}"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="cases">Rasa :</label>
-                                        <input type="text" class="form-control" name="price" value="{{ $produk->rasa }}"/>
+                                        <input type="text" class="form-control mb-3" name="price" value="{{ $produk->rasa }}"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="cases">Harga Jual :</label>
-                                        <input type="text" class="form-control" name="price" value="{{ $produk->harga_jual }}"/>
+                                        <input type="text" class="form-control mb-3" name="price" value="{{ $produk->harga_jual }}"/>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Update Data</button>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                                <a href="" type="submit" class="btn btn-warning text-light">Update Data</a>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <a href="{{route('jenis.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                                        </div>
+                                    </div>
                                 </form>
                                 </div>                                
                             </div>
