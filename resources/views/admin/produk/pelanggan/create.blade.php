@@ -11,10 +11,24 @@
         <div class="row">
             <div class="col-md-6 position-relative">
             <h2 class="mt-1 text-warning">Data Pelanggan</h2>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             </div>
         </div>
         <div class="card mb-4">
+<<<<<<< HEAD
             <form action="{{ route('pelanggan.store')}}" method="POST">
+=======
+            <form action="{{ route('pelanggan.store') }}" method="POST">
+>>>>>>> d2b2a94d84aa2e87079da6ff315647595a40d82f
                 @csrf
                 <div class="card-header">
                     Data Pelanggan
@@ -31,7 +45,11 @@
                 </div>
                 <div class="row px-3 mb-3">
                     <div class="col-md-1">
+<<<<<<< HEAD
                         <input type="submit" class="btn btn-warning text-light" value="Simpan">
+=======
+                            <button href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+>>>>>>> d2b2a94d84aa2e87079da6ff315647595a40d82f
                     </div>
                     <div class="col-md-1">
                         <a href="{{route('pelanggan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

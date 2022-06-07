@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDataPelangganTable extends Migration
+class CreateDatailPelangganTable extends Migration
 {
     /**
      * Run the migrations.
@@ -29,6 +29,6 @@ class CreateDataPelangganTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('data_pelanggan');
+        Schema::dropIfExists('datail_pelanggan');
     }
 }

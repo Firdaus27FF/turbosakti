@@ -23,11 +23,11 @@ route::get('/', function (){
 
 route::get('/app', function () {
     return view('admin.app');
-})->name('app'); 
+})->name('app');
 
-Route::get('/app', function () {
-    return view('admin.app');
-});
+// Route::get('/app', function () {
+//     return view('admin.app');
+// });
 
 Route::get('/users', function () {
     return view('users.index');
@@ -35,35 +35,35 @@ Route::get('/users', function () {
 
 route::get('/produk', function () {
     return view('admin.produk.jenisproduk.index');
-})->name('produk'); 
+})->name('produk');
 
 route::get('/stokproduk', function () {
     return view('admin.produk.stokproduk.index');
-})->name('stokproduk'); 
+})->name('stokproduk');
 
-route::get('/catatkeuangan', function () {
-    return view('admin.produk.catatkeuangan.index');
-})->name('catatkeuangan'); 
+// route::get('/catatkeuangan', function () {
+//     return view('admin.produk.catatkeuangan.index');
+// })->name('catatkeuangan');
 
-route::get('/prediksipenjualan', function () {
-    return view('admin.produk.prediksipenjualan.index');
-})->name('prediksipenjualan');
+// route::get('/prediksipenjualan', function () {
+//     return view('admin.produk.prediksipenjualan.index');
+// })->name('prediksipenjualan');
 
 // route::get('/pelanggan', function () {
 //     return view('admin.produk.pelanggan.index');
-// })->name('pelanggan'); 
+// })->name('pelanggan');
 
 route::get('/ongkir', function () {
     return view('admin.produk.ongkir.index');
 })->name('ongkir');
 
-route::get('/pemesanan', function () {
-    return view('admin.produk.pemesanan.index');
-})->name('pemesanan');
+// route::get('/pemesanan', function () {
+//     return view('admin.produk.pemesanan.index');
+// })->name('pemesanan');
 
-route::get('/pembayaran', function () {
-    return view('admin.produk.pembayaran.index');
-})->name('pembayaran');
+// route::get('/pembayaran', function () {
+//     return view('admin.produk.pembayaran.index');
+// })->name('pembayaran');
 
 Auth::routes();
 

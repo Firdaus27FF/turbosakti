@@ -37,10 +37,25 @@ class pelanggancontroller extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $data = $request->all();
         DetailPelanggan::create($data);
    
         return redirect('/pelanggan')->with('success', 'Data sudah tersimpan');
+=======
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_tlp' => 'required',
+        ]);
+
+        $data = $request->all();
+        // dd($data);
+        $datas = DetailPelanggan::create($data);
+
+        return redirect()->route('pelanggan.index')->with('success','Input Data Customers Berhasil');
+
+>>>>>>> d2b2a94d84aa2e87079da6ff315647595a40d82f
     }
 
     /**
@@ -62,8 +77,7 @@ class pelanggancontroller extends Controller
      */
     public function edit($id)
     {
-        $pelanggan = detailpelanggan::findOrFail($id);
-
+        $pelanggan = DetailPelanggan::findOrFail($id);
         return view('admin.produk.pelanggan.edit', compact('pelanggan'));
     }
 
@@ -77,13 +91,16 @@ class pelanggancontroller extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'nama' => 'required',
-            'alamat' => 'required',
-            'no_telp' => 'required',
+            'nama'          => 'required|unique:detail_pelanggan,nama,'.$id,
+            'alamat'        => 'required',
+            'no_tlp'        => 'required|unique:detail_pelanggan,no_tlp,'.$id,
         ]);
-        pelanggan::whereId($id)->update($validatedData);
+        $pelanggan = DetailPelanggan::findOrFail($id);
+        $data     = $request->all();
 
-        return redirect('/pelanggan')->with('success', 'Data selesai di update');
+        $pelanggan->update($data);
+
+        return redirect()->route('pelanggan.index')->with('success', 'Data selesai di update');
     }
 
     /**
@@ -94,9 +111,9 @@ class pelanggancontroller extends Controller
      */
     public function destroy($id)
     {
-        $pelanggan = detailpelanggan::findOrFail($id);
-        $pelanggan->delete();
+        $pelanggan = DetailPelanggan::findOrFail($id)->delete();
 
-        return back()->with('success', 'Data sudah di hapus');
+        return redirect()->route('pelanggan.index')->with('delete','Data Pelanggan Berhasil Dihapus');
+
     }
 }
