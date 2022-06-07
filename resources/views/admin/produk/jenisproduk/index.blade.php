@@ -47,7 +47,9 @@
                                         @foreach($produk as $p)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $p->gambar }}</td>
+                                            <td>
+                                                <img src="{{ asset('image/'.$p->gambar) }}" width="300" height="200">
+                                            </td>
                                             <td>{{ $p->rasa }}</td>
                                             <td>{{ $p->harga_jual }}</td>
                                             <td>

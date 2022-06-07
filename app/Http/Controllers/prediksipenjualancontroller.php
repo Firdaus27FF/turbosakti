@@ -38,12 +38,8 @@ class prediksipenjualancontroller extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'jadwal' => 'required|max:25',
-            'hasil_jumlah_produk' => 'required',
-            'hasil_bersih' => 'required',
-        ]);
-        $show = prediksipenjualan::create($validatedData);
+        $data = $request->all();
+        Prediksipenjualan::create($data);
    
         return redirect('/prediksipenjualan')->with('success', 'Data sudah tersimpan');
     }

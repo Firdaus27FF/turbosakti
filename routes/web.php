@@ -82,6 +82,8 @@ Route::resource('detailproduk', detailprodukcontroller::class);
 Route::resource('detailproduk2', detailproduk2controller::class);
 Route::resource('detailproduk3', detailproduk3controller::class);
 
+Route::get('/pemesanan/get/{id}', [App\Http\Controllers\pemesanancontroller::class, 'getID']);
+
 // Route::get('jenisproduk/tampil', [jenisprodukController::class, 'tampiljenisproduk'])->name('tampiljenisproduk')->middleware('auth');
 // Route::get('jenisproduk/tambah', [jenisprodukController::class, 'tambahjenisproduk'])->name('tambahjenisproduk')->middleware('auth');
 // Route::post('jenisproduk/simpan', [jenisprodukController::class, 'simpanjenisproduk'])->name('simpanjenisproduk')->middleware('auth');

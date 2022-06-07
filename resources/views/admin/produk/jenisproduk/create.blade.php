@@ -28,11 +28,11 @@
                 </ul>
             </div><br />
             @endif
-            <form method="post" action="{{ route('jenis.index') }}">
+            <form method="post" action="{{ route('jenis.index') }}" enctype="multipart/form-data">
                 <div class="form-group">
                     @csrf
                     <label>Gambar :</label>
-                    <input type="file" name="image" class="form-control mb-3" placeholder="image">
+                    <input type="file" name="gambar" class="form-control mb-3" placeholder="image">
                     <label>Rasa :</label>
                     <input type="text" class="form-control mb-3" name="rasa">
                     <label>Harga Jual :</label>
@@ -41,7 +41,7 @@
             </div>
             <div class="row px-3 mb-3">
                 <div class="col-md-1">
-                        <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                        <input type="submit" class="btn btn-warning text-light" value="Simpan">
                 </div>
                 <div class="col-md-1">
                     <a href="{{ route('jenis.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

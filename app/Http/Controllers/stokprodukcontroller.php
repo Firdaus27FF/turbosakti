@@ -37,12 +37,8 @@ class stokprodukcontroller extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'jumlah' => 'required|max:255',
-            'tanggal_produksi' => 'required',
-            'harga_per_ball' => 'required'
-        ]);
-        $show = StokProduk::create($validatedData);
+        $data = $request->all();
+        $show = StokProduk::create($data);
    
         return redirect('/stok')->with('success', 'Data sudah tersimpan');
     }
@@ -81,7 +77,7 @@ class stokprodukcontroller extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'jumlah' => 'required|max:255',
+            'jumlah' => 'required',
             'tanggal_produksi' => 'required',
             'harga_per_ball' => 'required',
         ]);

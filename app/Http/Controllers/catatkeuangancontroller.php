@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\keuangan;
+use App\Models\Keuangan;
 
 class catatkeuangancontroller extends Controller
 {
@@ -14,7 +14,7 @@ class catatkeuangancontroller extends Controller
      */
     public function index()
     {
-        $keuangan = keuangan::all();
+        $keuangan = Keuangan::all();
         $no = 1;
         return view('admin.produk.catatkeuangan.index', compact('keuangan', 'no'));
     }
@@ -38,14 +38,10 @@ class catatkeuangancontroller extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'tanggal' => 'required|max:255',
-            'jumlah_pemasukan' => 'required',
-            'jumla_pengeluaran' => 'required',
-        ]);
-        $show = Keuangan::create($validatedData);
+        $data = $request->all();
+        Keuangan::create($data);
    
-        return redirect('/keuangan')->with('success', 'Data sudah tersimpan');
+        return redirect('/catatkeuangan')->with('success', 'Data sudah tersimpan');
     }
 
     /**
@@ -67,7 +63,7 @@ class catatkeuangancontroller extends Controller
      */
     public function edit($id)
     {
-        $keuangan = keuangan::findOrFail($id);
+        $Keuangan = Keuangan::findOrFail($id);
 
         return view('admin.produk.catatkeuangan.edit', compact('keuangan'));
     }
@@ -86,7 +82,7 @@ class catatkeuangancontroller extends Controller
             'jumlah_pemasukan' => 'required',
             'jumlah_pengeluaran' => 'required',
         ]);
-        keuangan::whereId($id)->update($validatedData);
+        Keuangan::whereId($id)->update($validatedData);
 
         return redirect('/keuangan')->with('success', 'Data selesai di update');
     }

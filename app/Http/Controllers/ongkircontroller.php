@@ -15,7 +15,8 @@ class ongkircontroller extends Controller
     public function index()
     {
         $ongkir = Ongkir::all();
-        return view('admin.produk.ongkir.index', compact('ongkir'));
+        $no = 1;
+        return view('admin.produk.ongkir.index', compact('ongkir', 'no'));
 
     }
 
@@ -37,13 +38,6 @@ class ongkircontroller extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate([
-            'nama_order' => 'required|max:255',
-            'tanggal' => 'required',
-            'berat' => 'required',
-            'kurir' => 'required',
-            'status' => 'required',
-        ]);
         $data = $request->all();
         $show = Ongkir::create($data);
    

@@ -14,23 +14,24 @@
             </div>
         </div>
         <div class="card mb-4">
-            <div class="card-header">
-            <div class="card-body">
+            <form action="{{ route('prediksipenjualan.store')}}" method="POST">
+                @csrf
+                <div class="card-header">
                 Data Prediksi Penjualan
             </div>
             <div class="card-body">
                 <div class="form-group">
                     <label>jadwal : </label>
-                    <input type="text" class="form-control mb-3">
+                    <input type="text" class="form-control mb-3" name="jadwal">
                     <label>Hasil Jumlah Produk :</label>
-                    <input type="text" class="form-control mb-3">
+                    <input type="text" class="form-control mb-3" name="hasil_jumlah_produk">
                     <label>Hasil Bersih :</label>
-                    <input type="text" class="form-control mb-3">
+                    <input type="text" class="form-control mb-3" name="hasil_bersih">
                 </div>
             </div>
             <div class="row px-3 mb-3">
                 <div class="col-md-1">
-                        <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                        <input type="submit" class="btn btn-warning text-light" value="Simpan">
                 </div>
                 <div class="col-md-1">
                     <a href="{{route('prediksipenjualan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

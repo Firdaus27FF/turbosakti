@@ -15,7 +15,8 @@ class pelanggancontroller extends Controller
     public function index()
     {
         $datapelanggan = DetailPelanggan::all();
-        return view('admin.produk.pelanggan.index', compact('datapelanggan'));
+        $no = 1;
+        return view('admin.produk.pelanggan.index', compact('datapelanggan', 'no'));
     }
 
     /**
@@ -36,16 +37,10 @@ class pelanggancontroller extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nama' => 'required',
-            'alamat' => 'required',
-            'no_telp' => 'required',
-        ]);
         $data = $request->all();
-
-        $datas = DetailPelanggan::create($data);
+        DetailPelanggan::create($data);
    
-        return redirect('{{ route(pelanggan.index)}}')->with('success', 'Data sudah tersimpan');
+        return redirect('/pelanggan')->with('success', 'Data sudah tersimpan');
     }
 
     /**

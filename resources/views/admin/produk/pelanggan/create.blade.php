@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="card mb-4">
-            <form action="{{ route(pelanggan.store ) }}" method="POST">
+            <form action="{{ route('pelanggan.store')}}" method="POST">
                 @csrf
                 <div class="card-header">
                     Data Pelanggan
@@ -24,14 +24,14 @@
                         <label>Nama</label>
                         <input type="text" class="form-control mb-3" name="nama">
                         <label>Alamat</label>
-                        <input type="text" class="form-control mb-3"name="alamat">
-                        <label>No. Tlp</label>
-                        <input type="text" class="form-control mb-3"name="no_tlp">
+                        <input type="text" class="form-control mb-3" name="alamat">
+                        <label>No. Telp</label>
+                        <input type="text" class="form-control mb-3" name="no_tlp">
                     </div>
                 </div>
                 <div class="row px-3 mb-3">
                     <div class="col-md-1">
-                            <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                        <input type="submit" class="btn btn-warning text-light" value="Simpan">
                     </div>
                     <div class="col-md-1">
                         <a href="{{route('pelanggan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

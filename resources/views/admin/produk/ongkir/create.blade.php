@@ -14,8 +14,7 @@
             </div>
         </div>
         <div class="card mb-4">
-            <div class="card-header">
-            <form action="{{ route(ongkir.store ) }}" method="POST">
+            <form action="{{ route('ongkir.store')}}" method="POST">
                 @csrf
                 <div class="card-header">
                     Data Ongkos Kirim
@@ -36,7 +35,7 @@
                 </div>
                 <div class="row px-3 mb-3">
                     <div class="col-md-1">
-                            <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                            <input type="submit" class="btn btn-warning text-light" value="Simpan">
                     </div>
                     <div class="col-md-1">
                         <a href="{{route('ongkir.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

@@ -33,16 +33,16 @@
                     <div class="form-group">
                     @csrf
                         <label>Jumlah</label>
-                        <input type="text" class="form-control mb-3">
+                        <input type="text" class="form-control mb-3" name="jumlah">
                         <label>Tanggal Produksi</label>
-                        <input type="date" class="form-control mb-3">
+                        <input type="date" class="form-control mb-3" name="tanggal_produksi">
                         <label>Harga Per Ball</label>
-                        <input type="text" class="form-control mb-3">
+                        <input type="text" class="form-control mb-3" name="harga_per_ball">
                     </div>
             </div>
             <div class="row px-3 mb-3">
                 <div class="col-md-1">
-                        <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                        <input type="submit" class="btn btn-warning text-light" value="simpan">
                 </div>
                 <div class="col-md-1">
                     <a href="{{route('stok.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

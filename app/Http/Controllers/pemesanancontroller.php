@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pemesanan;
+use App\Models\DetailPelanggan;
+use App\Models\JenisProduk;
 
 class pemesanancontroller extends Controller
 {
@@ -27,7 +29,9 @@ class pemesanancontroller extends Controller
      */
     public function create()
     {
-        return view('admin.produk.pemesanan.create');
+        $pelanggan = DetailPelanggan::all();
+        $produk = JenisProduk::all();
+        return view('admin.produk.pemesanan.create', compact('pelanggan','produk'));
     }
 
     /**
@@ -36,17 +40,21 @@ class pemesanancontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     public function getID($id){
+         $produk = JenisProduk::find($id);
+         return response()->json($produk, 200);
+     }
+
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nama_order' => 'required',
-            'tanggal' => 'required',
-            'nama_produk' => 'required',
-            'jumlah' => 'required',
-            'harga' => 'required',
-            'total_harga' => 'required',
-        ]);
-        $show = Pemesanan::create($validatedData);
+        $pelanggan = $request->pelanggan_id;
+        $tanggal = $request->tanggal;
+        $produk = $request->produk_id;
+        $jumlah = $request->jumlah;
+        $harga = $request->harga;
+        $total = $harga * $jumlah;
+        Pemesanan::create(['pelanggan_id'=>$pelanggan, 'tanggal'=>$tanggal, 'produk_id'=>$produk, 'jumlah'=>$jumlah, 'harga'=>$harga, 'total_harga'=>$total]);
    
         return redirect('/pemesanan')->with('success', 'Data sudah tersimpan');
     }

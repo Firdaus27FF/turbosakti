@@ -16,18 +16,18 @@ class KeuanganSeeder extends Seeder
     {
         keuangan::create([
             'tanggal'=>'2022-12-20',
-            'jumlah_pemasukan'=>'400.000',
-            'jumlah_pengeluaran'=>'400.000/bulan'
+            'jumlah_pemasukan'=>'4000000/minggu',
+            'jumlah_pengeluaran'=>'400000'
         ]);
         keuangan::create([
             'tanggal'=>'2022-10-10',
-            'jumlah_pemasukan'=>'500.000',
-            'jumlah_pengeluaran'=>'500.000/bulan'
+            'jumlah_pemasukan'=>'40000000/bulan',
+            'jumlah_pengeluaran'=>'500000'
         ]);
         keuangan::create([
             'tanggal'=>'2022-04-02',
-            'jumlah_pemasukan'=>'200.000',
-            'jumlah_pengeluaran'=>'300.000/bulan'
+            'jumlah_pemasukan'=>'8000000/minggu',
+            'jumlah_pengeluaran'=>'300000'
         ]);
     }
 }

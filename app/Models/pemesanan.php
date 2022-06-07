@@ -11,7 +11,7 @@ class Pemesanan extends Model
 
     protected $table ='pemesanans';
     protected $primarykey ='id';
-    protected $fillable = ['id', 'pelanggan_id', 'nama_order', 'tanggal', 'nama_produk', 'produk_id', 'jumlah', 'harga','total_harga'];
+    protected $fillable = ['id', 'pelanggan_id', 'tanggal', 'produk_id', 'jumlah', 'harga','total_harga'];
 
     public function pelanggan()
     {

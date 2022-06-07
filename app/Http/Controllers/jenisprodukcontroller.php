@@ -15,7 +15,8 @@ class jenisprodukcontroller extends Controller
     public function index(Request $request)
     {
         $produk = jenisProduk::all();
-        return view('admin.produk.jenisproduk.index', compact('produk'));
+        $no = 1;
+        return view('admin.produk.jenisproduk.index', compact('produk', 'no'));
     }
 
     public function create(Request $request)
@@ -39,13 +40,12 @@ class jenisprodukcontroller extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate([
-            'rasa' => 'required|max:255',
-            'harga_jual' => 'required',
-            'foto'  => 'required|max:255',
-        ]);
-        $data = $request->all();
-        $show = JenisProduk::create($data);
+        $image = $request->file('gambar');
+        $rasa = $request->rasa;
+        $harga = $request->harga_jual;
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+        $image->move(public_path('/image'), $imageName);
+        $show = JenisProduk::create(['gambar'=>$imageName, 'rasa'=>$rasa, 'harga_jual'=>$harga]);
    
         return redirect('/jenis')->with('success', 'Data sudah tersimpan');
     }
@@ -83,17 +83,12 @@ class jenisprodukcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'gambar' => 'required',
-            'rasa' => 'required|max:255',
-            'harga_jual' => 'required',
-        ]);
-        $produk = produk::find($id);
-        $produk->gambar = $request->gambar;
-        $produk->rasa = $request->rasa;
-        $produk->harga_jual = $request->harga_jual;
-        $produk->save();
-        jenisproduk::whereId($id)->update($validatedData);
+        $image = $request->file('gambar');
+        $rasa = $request->rasa;
+        $harga = $request->harga_jual;
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+        $image->move(public_path('/image'), $imageName);
+        $show = JenisProduk::create(['gambar'=>$imageName, 'rasa'=>$rasa, 'harga_jual'=>$harga]);
 
         return redirect('/jenis')->with('success', 'Data selesai di update');
     }

@@ -14,23 +14,25 @@
             </div>
         </div>
         <div class="card mb-4">
-            <div class="card-header">
+            <form action="{{ route('catatkeuangan.store')}}" method="POST">
+                @csrf
+                <div class="card-header">
             <div class="card-body">
                 Data Pencatatan Keuangan
             </div>
             <div class="card-body">
                 <div class="form-group">
                     <label>Tanggal</label>
-                    <input type="text" class="form-control mb-3">
+                    <input type="date" class="form-control mb-3" name="tanggal">
                     <label>Jumlah Pemasukan</label>
-                    <input type="text" class="form-control mb-3">
+                    <input type="text" class="form-control mb-3" name="jumlah_pemasukan">
                     <label>Jumlah Pengeluaran</label>
-                    <input type="text" class="form-control mb-3">
+                    <input type="text" class="form-control mb-3" name="jumlah_pengeluaran">
                 </div>
             </div>
             <div class="row px-3 mb-3">
                 <div class="col-md-1">
-                        <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                    <input type="submit" class="btn btn-warning text-light" value="simpan">
                 </div>
                 <div class="col-md-1">
                     <a href="{{route('catatkeuangan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
