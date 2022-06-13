@@ -13,6 +13,9 @@ use App\Http\Controllers\pembayarancontroller;
 use App\Http\Controllers\detailprodukcontroller;
 use App\Http\Controllers\detailproduk2controller;
 use App\Http\Controllers\detailproduk3controller;
+use App\Http\Controllers\detailproduk4controller;
+use App\Http\Controllers\detailproduk5controller;
+use App\Http\Controllers\detailproduk6controller;
 
 
 use Illuminate\Support\Facades\Route;
@@ -81,6 +84,9 @@ Route::resource('pembayaran', pembayarancontroller::class);
 Route::resource('detailproduk', detailprodukcontroller::class);
 Route::resource('detailproduk2', detailproduk2controller::class);
 Route::resource('detailproduk3', detailproduk3controller::class);
+Route::resource('detailproduk4', detailproduk4controller::class);
+Route::resource('detailproduk5', detailproduk5controller::class);
+Route::resource('detailproduk6', detailproduk6controller::class);
 
 Route::get('/pemesanan/get/{id}', [App\Http\Controllers\pemesanancontroller::class, 'getID']);
 

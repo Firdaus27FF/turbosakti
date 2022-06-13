@@ -26,17 +26,6 @@
                         <form action="#">
                             
                             <h1>Bawang Putih Warna Kuning</h1>
-                            <div class=" product_ratting">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li class="review"><a href="#"> (250 reviews) </a></li>
-                                </ul>
-                                
-                            </div>
                             <div class="price_box">
                                     <span class="current_dark">Rp. 5.000</span>                             
                             </div>
@@ -50,22 +39,12 @@
                                 </p>
                             </div>
                             <div class="product_variant quantity">
-                                <label>quantity</label>
+                                <label>Jumlah</label>
                                 <input min="1" max="100" value="1" type="number">
                                 <button class="button" type="submit">Beli Sekarang</button>  
                                 
                             </div>                            
                         </form>
-                        <div class="priduct_social">
-                            <ul>
-                                <li><a class="facebook" href="#" title="facebook"><i class="fa fa-facebook"></i> Like</a></li>           
-                                <li><a class="twitter" href="#" title="twitter"><i class="fa fa-twitter"></i> tweet</a></li>           
-                                <li><a class="pinterest" href="#" title="pinterest"><i class="fa fa-pinterest"></i> save</a></li>           
-                                <li><a class="google-plus" href="#" title="google +"><i class="fa fa-google-plus"></i> share</a></li>        
-                                <li><a class="linkedin" href="#" title="linkedin"><i class="fa fa-linkedin"></i> linked</a></li>        
-                            </ul>      
-                        </div>
-
                     </div>
                 </div>
             </div>

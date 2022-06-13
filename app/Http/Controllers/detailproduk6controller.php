@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\stokproduk;
 
-class stokprodukcontroller extends Controller
+class detailproduk6controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,7 @@ class stokprodukcontroller extends Controller
      */
     public function index()
     {
-        $stok = Stokproduk::all();
-        $no = 1;
-        return view('admin.produk.stokproduk.index', compact('stok', 'no'));
+        return view('users.detailproduk6');
     }
 
     /**
@@ -26,7 +23,7 @@ class stokprodukcontroller extends Controller
      */
     public function create()
     {
-        return view('admin.produk.stokproduk.create');
+        //
     }
 
     /**
@@ -37,10 +34,7 @@ class stokprodukcontroller extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $show = StokProduk::create($data);
-   
-        return redirect('/stok')->with('success', 'Data sudah tersimpan');
+        //
     }
 
     /**
@@ -51,7 +45,7 @@ class stokprodukcontroller extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -62,9 +56,7 @@ class stokprodukcontroller extends Controller
      */
     public function edit($id)
     {
-        $stok = StokProduk::findOrFail($id);
-
-        return view('admin.produk.stokproduk.edit', compact('stok'));
+        //
     }
 
     /**
@@ -76,17 +68,7 @@ class stokprodukcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'jumlah' => 'required'.$id,
-            'tanggal_produksi' => 'required'.$id,
-            'harga_per_ball' => 'required'.$id,
-        ]);
-        $stok = StokProduk::findOrFail($id);
-        $data     = $request->all();
-
-        $stok->update($data);
-
-        return redirect()->route('stok.index')->with('success', 'Data selesai di update');
+        //
     }
 
     /**
@@ -97,9 +79,6 @@ class stokprodukcontroller extends Controller
      */
     public function destroy($id)
     {
-        $stok = jenisproduk::findOrFail($id);
-        $stok->delete();
-
-        return back()->with('success', 'Data sudah di hapus');
+        //
     }
 }

@@ -39,16 +39,16 @@
                     </select>
                     <label>Jumlah</label>
                     <select name="jumlah" id="jumlah" class="form-control">
-                        <option value="1">1 / ball</option>
-                        <option value="2">2 / ball</option>
-                        <option value="3">3 / ball</option>
-                        <option value="4">4 / ball</option>
-                        <option value="5">5 / ball</option>
-                        <option value="6">6 / ball</option>
-                        <option value="7">7 / ball</option>
-                        <option value="8">8 / ball</option>
-                        <option value="9">9 / ball</option>
-                        <option value="10">10 / ball</option>
+                        <option value="1">1  ball</option>
+                        <option value="2">2  ball</option>
+                        <option value="3">3  ball</option>
+                        <option value="4">4  ball</option>
+                        <option value="5">5  ball</option>
+                        <option value="6">6  ball</option>
+                        <option value="7">7  ball</option>
+                        <option value="8">8  ball</option>
+                        <option value="9">9  ball</option>
+                        <option value="10">10 ball</option>
                     </select>
                     <label>Harga</label>
                     <input type="text" class="form-control mb-3" name="harga" id="harga">

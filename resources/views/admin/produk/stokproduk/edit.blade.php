@@ -44,9 +44,9 @@
                                         <input type="text" class="form-control mb-3" name="price" value="{{ $stok->harga_per_ball }}"/>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-2">
-                                                <a href="" type="submit" class="btn btn-warning text-light">Update Data</a>
-                                        </div>
+                                            <div class="col-md-2">
+                                                <input type="submit" class="btn btn-warning text-light" value="Update Data">
+                                            </div>
                                         <div class="col-md-1">
                                             <a href="{{route('stok.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                                         </div>

@@ -37,25 +37,10 @@ class pelanggancontroller extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
         $data = $request->all();
         DetailPelanggan::create($data);
    
         return redirect('/pelanggan')->with('success', 'Data sudah tersimpan');
-=======
-        $request->validate([
-            'nama' => 'required',
-            'alamat' => 'required',
-            'no_tlp' => 'required',
-        ]);
-
-        $data = $request->all();
-        // dd($data);
-        $datas = DetailPelanggan::create($data);
-
-        return redirect()->route('pelanggan.index')->with('success','Input Data Customers Berhasil');
-
->>>>>>> d2b2a94d84aa2e87079da6ff315647595a40d82f
     }
 
     /**

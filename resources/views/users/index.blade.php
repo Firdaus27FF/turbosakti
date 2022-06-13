@@ -26,11 +26,10 @@
                         <a href="{{ route('detailproduk.index')}}">
                             <div class="tranding-pro-title">
                                 <h5>Keripik Singkong Rasa Bawang Putih Original</h5>
-                                <!-- <h4>Drone</h4> -->
                             </div>
                             <div class="tranding-pro-price">
                                 <div class="price_box">
-                                    <span class="current_price">Rp.2.000</span>
+                                    <span class="current_price">Rp. 2000</span>
                                 </div>
                             </div>
                         </a>
@@ -47,7 +46,7 @@
                             </div>
                             <div class="tranding-pro-price">
                                 <div class="price_box">
-                                    <span class="current_price">Rp.2.000</span>
+                                    <span class="current_price">Rp. 2.000</span>
                                 </div>
                             </div>
                         </a>
@@ -62,11 +61,10 @@
                         <a href="{{ route('detailproduk3.index')}}">
                             <div class="tranding-pro-title">
                                 <h5>Keripik Singkong Rasa Bawang Putih Original warna kuning</h5>
-                                <!-- <h4>Drone</h4> -->
                             </div>
                             <div class="tranding-pro-price">
                                 <div class="price_box">
-                                    <span class="current_price">Rp.5.000</span>
+                                    <span class="current_price">Rp. 5.000</span>
                                 </div>
                             </div>
                         </a>
@@ -79,10 +77,9 @@
     <section class="pt-30 pb-30 gray-bg">
         <div class="container">
             <div class="row">
-                <!-- <div class="col text-center"> -->
+
                     <div class="section-title">
                     </div>
-                <!-- </div> -->
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-1 col-12">
@@ -90,14 +87,14 @@
                             <div class="tranding">
                                 <img width="400px" src="{{ asset('user/assets/img/product/tranding-1.jpg')}}" alt="" >
                             </div>
-                        <a href="{{ route('detailproduk.index')}}">
+                        <a href="{{ route('detailproduk4.index')}}">
                             <div class="tranding-pro-title">
                                 <h5>Keripik Singkong Rasa Bawang Putih Original</h5>
                                 <!-- <h4>Drone</h4> -->
                             </div>
                             <div class="tranding-pro-price">
                                 <div class="price_box">
-                                    <span class="current_price">Rp.2.000</span>
+                                    <span class="current_price">Rp. 5.000</span>
                                 </div>
                             </div>
                         </a>
@@ -108,13 +105,13 @@
                             <div class="tranding">
                                 <img width="360px" src="{{ asset('user/assets/img/product/tranding-4.jpg')}}" alt="">
                             </div>
-                        <a href="{{ route('detailproduk2.index')}}">
+                        <a href="{{ route('detailproduk5.index')}}">
                             <div class="tranding-pro-title">
                                 <h5>Keripik Singkong Pedas Manis warna Kuning</h5>
                             </div>
                             <div class="tranding-pro-price">
                                 <div class="price_box">
-                                    <span class="current_price">Rp.2.000</span>
+                                    <span class="current_price">Rp. 2.000</span>
                                 </div>
                             </div>
                         </a>
@@ -126,14 +123,14 @@
                         <div class="tranding">
                                 <img width="400px" src="{{ asset('user/assets/img/product/tranding-2.jpg')}}" alt="" >
                             </div>
-                        <a href="{{ route('detailproduk3.index')}}">
+                        <a href="{{ route('detailproduk6.index')}}">
                             <div class="tranding-pro-title">
                                 <h5>Keripik Singkong Rasa Bawang Putih Original warna kuning</h5>
                                 <!-- <h4>Drone</h4> -->
                             </div>
                             <div class="tranding-pro-price">
                                 <div class="price_box">
-                                    <span class="current_price">Rp.5.000</span>
+                                    <span class="current_price">Rp. 58.000</span>
                                 </div>
                             </div>
                         </a>
@@ -142,6 +139,4 @@
             </div>
         </div>
     </section>
-
-    
-    @endsection
+@endsection

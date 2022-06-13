@@ -61,7 +61,7 @@
                                    <form action="#">
                                         <div class="search_box shadow-lg">
                                             <input placeholder="Cari Produk" type="text">
-                                            <button type="submit"class="">Cari</submit> 
+                                            <button type="submit"class="btn btn-warning text-light">Cari</button> 
                                         </div>
                                     </form>
                                 </div>
@@ -69,10 +69,9 @@
                                     <div class="header_wishlist">
                                         <a href="#"><img src="{{ asset('user/assets/img/user.png')}}" alt=""  width="40" height="40"></a>
                                     </div>
-                                    <div class="mini_cart_wrapper">
+                                    <!-- <div class="mini_cart_wrapper">
                                         <a href="javascript:void(0)"><img src="{{ asset('user/assets/img/shopping-bag.png')}}" alt="" width="40" height="40"></a>
                                         <span class="cart_quantity">2</span>
-                                        <!--mini cart-->
                                          <div class="mini_cart">
                                             <div class="cart_item">
                                                <div class="cart_img">
@@ -118,8 +117,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--mini cart end-->
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

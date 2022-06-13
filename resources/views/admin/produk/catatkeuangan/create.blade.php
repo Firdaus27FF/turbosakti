@@ -38,6 +38,7 @@
                     <a href="{{route('catatkeuangan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </main>

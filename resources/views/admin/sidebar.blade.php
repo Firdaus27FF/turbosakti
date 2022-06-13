@@ -26,10 +26,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-users-between-lines"></i></div>
                                 Data Pelanggan
                             </a>
-                            <a class="nav-link" href="{{ route('ongkir.index')}}">
+                            <!-- <a class="nav-link" href="{{ route('ongkir.index')}}">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-people-carry-box"></i></div>
                                 Ongkos Kirim
-                            </a>
+                            </a> -->
                             <a class="nav-link" href="{{ route('pemesanan.index')}}">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-cart-shopping"></i></div>
                                 Pemesanan

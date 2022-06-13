@@ -13,7 +13,7 @@ class produkdetailcontroller extends Controller
      */
     public function index()
     {
-        return view('users.produkdetail');
+        return view('users.detailproduk');
     }
 
     /**

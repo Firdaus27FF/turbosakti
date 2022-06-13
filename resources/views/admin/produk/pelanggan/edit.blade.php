@@ -47,14 +47,12 @@
                                 <input type="text" class="form-control mb-3" name="no_tlp"
                                     value="{{ $pelanggan->no_tlp }}" />
                             </div>
-
-                            <div class="row">
+                            <div class="row ">
                                 <div class="col-md-2">
-                                    <button href="" type="submit" class="btn btn-warning text-light">Update Data</a>
+                                    <input type="submit" class="btn btn-warning text-light" value="Update Data">
                                 </div>
                                 <div class="col-md-1">
-                                    <a href="{{route('pelanggan.index')}}" type="button"
-                                        class="btn btn-warning text-light">Kembali</a>
+                                    <a href="{{route('pelanggan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                                 </div>
                             </div>
                     </form>
