@@ -19,8 +19,6 @@
     <title>Login Admin</title>
   </head>
   <body>
-  
-
   <div class="d-lg-flex half">
     <div class="bg order-1 order-md-2" style="background-image: url('loginn/images/bg2.jpg');"></div>
     <div class="contents order-2 order-md-1">
@@ -33,9 +31,10 @@
                 <h1>login</h1>
             </div>
             <form action="{{ route('login') }}" method="POST">
+              @csrf
               <div class="form-group first">
                 <label for="email">{{ __('Email Address') }}</label>
-                <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan email" id="email">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan email" id="email" name="email">
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -44,7 +43,7 @@
               </div>
               <div class="form-group last mb-3">
                 <label for="password">{{ __('Password') }}</label>
-                <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Masukkan Password" id="password">
+                <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Masukkan Password" id="password" name="password">
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

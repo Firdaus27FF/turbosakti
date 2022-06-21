@@ -6,8 +6,6 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="product-details-tab">
-                        <!-- <div id="img-1" class="zoomWrapper single-zoom"> -->
-                            
                             <a href="#">
                             <div class="product-turbo">
                                 <img  src="{{ asset('user/assets/img/product/tranding-2.jpg')}}" data-zoom-image="assets/img/product/details-1.jpg" alt="big-1">
@@ -24,7 +22,6 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product_d_right">
                         <form action="#">
-                            
                             <h1>Bawang Putih Warna Kuning</h1>
                             <div class="price_box">
                                     <span class="current_dark">Rp. 5.000</span>                             
