@@ -28,14 +28,14 @@
                         </ul>
                     </div><br />
                     @endif
-                    <form method="post" action="{{ route('pelanggan.update', $pelanggan->id ) }}">
+                    <form method="post" action="{{ route('pelanggan.update',$pelanggan->id ) }}">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="cases">Nama :</label>
                                 <input type="text" class="form-control mb-3" name="nama"
-                                    value="{{ $pelanggan->nama }}" />
+                                    value="{{ $pelanggan->nama }}"/>
                             </div>
                             <div class="form-group">
                                 <label for="cases">Alamat :</label>
@@ -48,8 +48,8 @@
                                     value="{{ $pelanggan->no_tlp }}" />
                             </div>
                             <div class="row ">
-                                <div class="col-md-2">
-                                    <input type="submit" class="btn btn-warning text-light" value="Update Data">
+                                <div class="col-md-1">
+                                    <input type="submit" class="btn btn-warning text-light" value="Update">
                                 </div>
                                 <div class="col-md-1">
                                     <a href="{{route('pelanggan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

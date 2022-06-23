@@ -28,20 +28,20 @@
                                     </ul>
                                 </div><br />
                                 @endif
-                                <form method="post" action="{{ route('catatkeuangan.update', $keuangan->id ) }}">
+                                <form method="post" action="{{ route('catatkeuangan.update', $catatkeuangan->id ) }}">
+                                    @csrf
+                                    @method('PATCH')    
                                     <div class="form-group">
-                                        @csrf
-                                        @method('PATCH')
                                         <label for="country_name">Tanggal :</label>
-                                        <input type="date" class="form-control mb-3" name="name" value="{{ $keuangan->tanggal }}"/>
+                                        <input type="date" class="form-control mb-3" name="tanggal" value="{{ $catatkeuangan->tanggal }}"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="cases">Jumlah Pemasukan :</label>
-                                        <input type="text" class="form-control mb-3" name="price" value="{{ $keuangan->jumlah_pemasukan }}"/>
+                                        <input type="text" class="form-control mb-3" name="jumlah_pemasukan" value="{{ $catatkeuangan->jumlah_pemasukan }}"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="cases">Jumlah Pengeluaran :</label>
-                                        <input type="text" class="form-control mb-3" name="price" value="{{ $keuangan->jumlah_pengeluaran }}"/>
+                                        <input type="text" class="form-control mb-3" name="jumlah_pengeluaran" value="{{ $catatkeuangan->jumlah_pengeluaran }}"/>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-2">

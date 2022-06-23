@@ -40,7 +40,7 @@
                         <input type="text" class="form-control mb-3" name="harga_per_ball">
                     </div>
             </div>
-            <div class="row px-3 mb-3">
+            <div class="row">
                 <div class="col-md-1">
                         <input type="submit" class="btn btn-warning text-light" value="simpan">
                 </div>

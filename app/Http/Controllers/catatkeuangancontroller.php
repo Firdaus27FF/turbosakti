@@ -63,9 +63,9 @@ class catatkeuangancontroller extends Controller
      */
     public function edit($id)
     {
-        $Keuangan = Keuangan::findOrFail($id);
+        $catatkeuangan = Keuangan::findOrFail($id);
 
-        return view('admin.produk.catatkeuangan.edit', compact('keuangan'));
+        return view('admin.produk.catatkeuangan.edit', compact('catatkeuangan'));
     }
 
     /**
@@ -77,14 +77,20 @@ class catatkeuangancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'tanggal' => 'required|max:255',
+        $this->validate($request,[
+            'tanggal' => 'required',
             'jumlah_pemasukan' => 'required',
             'jumlah_pengeluaran' => 'required',
         ]);
-        Keuangan::whereId($id)->update($validatedData);
+        $catatkeuangan = Keuangan::findOrFail($id);
 
-        return redirect('/keuangan')->with('success', 'Data selesai di update');
+        $catatkeuangan->update([
+            'tanggal'               => $request->tanggal,
+            'jumlah_pemasukan'      => $request->jumlah_pemasukan,
+            'jumlah_pengeluaran'    => $request->jumlah_pengeluaran
+        ]);
+
+        return redirect()->route('catatkeuangan.index')->with('success', 'Data selesai di update');
     }
 
     /**

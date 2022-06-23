@@ -28,24 +28,25 @@
                                     </ul>
                                 </div><br />
                                 @endif
-                                <form method="post" action="{{ route('prediksipenjualan.update', $prediksipenjualan->id ) }}">
-                                    <div class="form-group">
-                                        @csrf
-                                        @method('PATCH')
+                                <form method="post" action="{{ route('prediksipenjualan.update', $prediksipenjualan->id )}}">
+                                 @csrf
+                                    @method('PUT')    
+                                <div class="form-group">
+                                      
                                         <label for="country_name">jadwal :</label>
-                                        <input type="text" class="form-control mb-3" name="name" value="{{ $prediksipenjualan->jadwal }}"/>
+                                        <input type="text" class="form-control mb-3" name="jadwal" value="{{$prediksipenjualan->jadwal }}"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="cases">Hasil Jumlah Produk :</label>
-                                        <input type="text" class="form-control mb-3" name="price" value="{{ $prediksipenjualan->hasil_jumlah_produk }}"/>
+                                        <input type="text" class="form-control mb-3" name="hasil_jumlah_produk" value="{{$prediksipenjualan->hasil_jumlah_produk }}"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="cases">Hasil Bersih :</label>
-                                        <input type="text" class="form-control mb-3" name="price" value="{{ $prediksipenjualan->hasil_bersih }}"/>
+                                        <input type="text" class="form-control mb-3" name="hasil_bersih" value="{{$prediksipenjualan->hasil_bersih }}"/>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-2">
-                                                <a href="" type="submit" class="btn btn-warning text-light">Update Data</a>
+                                        <div class="col-md-1">
+                                                <a href="" type="submit" class="btn btn-warning text-light">Update</a>
                                         </div>
                                         <div class="col-md-1">
                                             <a href="{{route('prediksipenjualan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

@@ -10,18 +10,41 @@
     <div class="container-fluid px-4">
         <div class="row">
             <div class="col-md-6 position-relative">
-            <h2 class="mt-1 text-warning">Pencatatan Keuangan</h2>
+            <h2 class="mt-1 text-warning">Data Pencatatan Keuangan</h2>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             </div>
         </div>
         <div class="card mb-4">
             <form action="{{ route('catatkeuangan.store')}}" method="POST">
                 @csrf
                 <div class="card-header">
-            <div class="card-body">
-                Data Pencatatan Keuangan
-            </div>
-            <div class="card-body">
-                <div class="form-group">
+                <div class="card-body">
+                    Data Pencatatan Keuangan
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div><br />
+                        @endif
+                        <form method="post" action="{{ route('catatkeuangan.index') }}">
+                        <div class="form-group">
+                        @csrf
+                        <div class="form-group">
                     <label>Tanggal</label>
                     <input type="date" class="form-control mb-3" name="tanggal">
                     <label>Jumlah Pemasukan</label>
@@ -30,7 +53,7 @@
                     <input type="text" class="form-control mb-3" name="jumlah_pengeluaran">
                 </div>
             </div>
-            <div class="row px-3 mb-3">
+            <div class="row">
                 <div class="col-md-1">
                     <input type="submit" class="btn btn-warning text-light" value="simpan">
                 </div>

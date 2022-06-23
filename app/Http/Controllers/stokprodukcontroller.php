@@ -76,15 +76,19 @@ class stokprodukcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'jumlah' => 'required'.$id,
-            'tanggal_produksi' => 'required'.$id,
-            'harga_per_ball' => 'required'.$id,
+        $this->validate($request,[
+            'jumlah'            => 'required',
+            'tanggal_produksi'  => 'required',
+            'harga_per_ball'    => 'required',
         ]);
-        $stok = StokProduk::findOrFail($id);
-        $data     = $request->all();
 
-        $stok->update($data);
+        $stok = StokProduk::findOrFail($id);
+
+        $stok->update([
+            'jumlah'            => $request->jumlah,
+            'tanggal_produksi'  => $request->tanggal_produksi,
+            'harga_per_ball'    => $request->harga_per_ball,
+        ]);
 
         return redirect()->route('stok.index')->with('success', 'Data selesai di update');
     }

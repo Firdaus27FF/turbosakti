@@ -14,11 +14,14 @@
             </div>
         </div>
         <div class="card mb-4">
-            <div class="card-header">
-            <div class="card-body">
-                Data Jenis Produk
-            </div>
-            <div class="card-body">
+            <form action="{{ route('jenis.store')}}" method="POST">
+                @csrf
+                <div class="card-header">
+                <div class="card-body">
+                    Data Jenis Produk
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -39,15 +42,15 @@
                     <input type="text" class="form-control mb-3"name="harga_jual">
                 </div>
             </div>
-            <div class="row px-3 mb-3">
+            <div class="row">
                 <div class="col-md-1">
-                        <input type="submit" class="btn btn-warning text-light" value="Simpan">
+                    <input type="submit" class="btn btn-warning text-light" value="simpan">
                 </div>
                 <div class="col-md-1">
-                    <a href="{{ route('jenis.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
+                    <a href="{{route('jenis.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                 </div>
-            </form>
             </div>
+            </form>
         </div>
     </div>
 </main>

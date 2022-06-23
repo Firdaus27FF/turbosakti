@@ -10,19 +10,43 @@
     <div class="container-fluid px-4">
         <div class="row">
             <div class="col-md-6 position-relative">
-            <h2 class="mt-1 text-warning">Pemesanan</h2>
+            <h2 class="mt-1 text-warning">Data Pemesanan</h2>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             </div>
         </div>
         <div class="card mb-4">
             <form action="{{ route('pemesanan.store')}}" method="POST">
                 @csrf
                 <div class="card-header">
-                Data Pemesanan
-            </div>
-            <div class="card-body">
-                <div class="form-group">
+                <div class="card-body">
+                    Data Pemesanan
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div><br />
+                        @endif
+                        <form method="post" action="{{ route('pemesanan.index') }}">
+                        <div class="form-group">
+                        @csrf
+                        <div class="form-group">
                     <label>Nama Order</label>
-                    <select name="pelanggan_id"class="form-control">
+                    <select name="pelanggan_id"class="form-control mb-3">
                         @foreach($pelanggan as $p)
                             <option value="{{ $p->id }}">{{ $p->nama }}</option>
                         @endforeach
@@ -30,7 +54,7 @@
                     <label>Tanggal</label>
                     <input type="date" class="form-control mb-3" name="tanggal">
                     <label>Rasa Produk</label>
-                    <select name="p" class="form-control" id="rasa">
+                    <select name="p" class="form-control mb-3" id="rasa">
                         @foreach($produk as $row)
                             <option value="">Select Flavour</option>
                             <option value="{{ $row->id }}">{{ $row->rasa }}</option>
@@ -38,7 +62,7 @@
                         <input type="text" hidden name="produk_id" id="produk_id">
                     </select>
                     <label>Jumlah</label>
-                    <select name="jumlah" id="jumlah" class="form-control">
+                    <select name="jumlah" id="jumlah" class="form-control mb-3">
                         <option value="1">1  ball</option>
                         <option value="2">2  ball</option>
                         <option value="3">3  ball</option>
@@ -54,7 +78,7 @@
                     <input type="text" class="form-control mb-3" name="harga" id="harga">
                 </div>
             </div>
-            <div class="row px-3 mb-3">
+            <div class="row">
                 <div class="col-md-1">
                         <input type="submit" class="btn btn-warning text-light" value="Simpan">
                 </div>

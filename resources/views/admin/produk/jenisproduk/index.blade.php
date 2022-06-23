@@ -48,7 +48,7 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>
-                                                <img src="{{ asset('image/'.$p->gambar) }}" width="300" height="200">
+                                                <img src="{{ asset('image/'.$p->gambar) }}" width="100" height="100">
                                             </td>
                                             <td>{{ $p->rasa }}</td>
                                             <td>{{ $p->harga_jual }}</td>

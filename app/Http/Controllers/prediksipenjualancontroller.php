@@ -39,7 +39,7 @@ class prediksipenjualancontroller extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Prediksipenjualan::create($data);
+        $show = PrediksiPenjualan::create($data);
    
         return redirect('/prediksipenjualan')->with('success', 'Data sudah tersimpan');
     }
@@ -77,14 +77,21 @@ class prediksipenjualancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'jadwal' => 'required|max:25',
-            'hasil_jumlah_produk' => 'required',
-            'hasil_bersih' => 'required',
+        $this->validate($request,[
+            'jadwal'                => 'required',
+            'hasil_jumlah_produk'   => 'required',
+            'hasil_bersih'          => 'required',
         ]);
-        prediksipenjualan::whereId($id)->update($validatedData);
 
-        return redirect('/prediksipenjualan')->with('success', 'Data selesai di update');
+        $prediksipenjualan = PrediksiPenjualan::findOrFail($id);
+
+        $prediksipenjualan->update([
+            'jadwal'                => $request->jadwal,
+            'hasil_jumlah_produk'   => $request->hasil_jumlah_produk,
+            'hasil_bersih'          => $request->hasil_bersih,
+        ]);
+
+        return redirect()->route('prediksipenjualan.index')->with('success', 'Data selesai di update');
     }
 
     /**

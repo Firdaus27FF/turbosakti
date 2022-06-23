@@ -92,17 +92,27 @@ class pemesanancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'nama_order' => 'required',
-            'tanggal' => 'required',
-            'nama_produk' => 'required',
-            'jumlah' => 'required',
-            'harga' => 'required',
-            'total_harga' => 'required',
+        $this->validate($request,[
+            'nama_order'    => 'required',
+            'tanggal'       => 'required',
+            'nama_produk'   => 'required',
+            'jumlah'        => 'required',
+            'harga'         => 'required',
+            'total_harga'   => 'required',
         ]);
-        Pemesanan::whereId($id)->update($validatedData);
 
-        return redirect('/pemesanan')->with('success', 'Data selesai di update');
+        $pemesanan = Pemesanan::findOrFail($id);
+
+        $pemesanan->delete([
+            'nama_order'    => 'required',
+            'tanggal'       => 'required',
+            'nama_produk'   => 'required',
+            'jumlah'        => 'required',
+            'harga'         => 'required',
+            'total_harga'   => 'required',
+        ]);
+
+        return redirect('pemesanan.index')->with('success', 'Data selesai di update');
     }
 
     /**

@@ -14,7 +14,7 @@ class jenisprodukcontroller extends Controller
      */
     public function index(Request $request)
     {
-        $produk = jenisProduk::all();
+        $produk = JenisProduk::all();
         $no = 1;
         return view('admin.produk.jenisproduk.index', compact('produk', 'no'));
     }

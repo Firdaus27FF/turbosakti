@@ -12,6 +12,9 @@ class DetailPelanggan extends Model
     protected $table = 'detail_pelanggan';
     protected $guarded =[];
 
+    protected $primarykey ='id';
+    protected $fillable = ['id', 'nama', 'alamat', 'no_telp'];
+
     public function pemesanan()
     {
         return $this->hasMany(pemesanan::class, 'pelanggan_id');

@@ -1,4 +1,3 @@
-
 @extends('users.app')
 @section ('content')
 <div class="product_details mt-60 mb-60">
@@ -11,11 +10,8 @@
                                 <img  src="{{ asset('user/assets/img/product/tranding-2.jpg')}}" data-zoom-image="assets/img/product/details-1.jpg" alt="big-1">
                             </a>
                             </div>
-                        <!-- </div> -->
                         <div class="single-zoom-thumb">
-                            <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
-                                
-                            </ul>
+                            <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01"></ul>
                         </div>
                     </div>
                 </div>
@@ -28,17 +24,16 @@
                             </div>
                             <div class="product_desc">
                                 <ul>
-                                    <li>In Stock</li>
-                                    <li>Free delivery available</li>
+                                    <li>130 Gram</li>
+                                    <li>Gurih</li>
+                                    <li>Renyah</li>
                                 </ul>
-                                <p>
-                                    Keripik ini memiliki produk yang sangat berkualitas 100% halal dan bagus. Dengan rasa bawang putih dengan keripik warna kunig yang masih bagus. 
-                                </p>
+                                <p>Keripik ini memiliki produk yang sangat berkualitas 100% halal dan bagus. Dengan rasa bawang putih dengan keripik warna kunig yang masih bagus.</p>
                             </div>
                             <div class="product_variant quantity">
-                                <label>Jumlah</label>
+                                <label>Kuantitas</label>
                                 <input min="1" max="100" value="1" type="number">
-                                <button class="button" type="submit">Beli Sekarang</button>      
+                                <button class="button" type="submit">Langsung Beli Sekarang</button>      
                             </div>                            
                         </form>
                     </div>

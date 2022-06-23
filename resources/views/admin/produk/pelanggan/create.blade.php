@@ -27,10 +27,24 @@
             <form action="{{ route('pelanggan.store')}}" method="POST">
                 @csrf
                 <div class="card-header">
+                <div class="card-body">
                     Data Pelanggan
                 </div>
                 <div class="card-body">
                     <div class="form-group">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div><br />
+                        @endif
+                        <form method="post" action="{{ route('stok.index') }}">
+                        <div class="form-group">
+                        @csrf
+                        <div class="form-group">
                         <label>Nama</label>
                         <input type="text" class="form-control mb-3" name="nama">
                         <label>Alamat</label>
@@ -39,16 +53,15 @@
                         <input type="text" class="form-control mb-3" name="no_tlp">
                     </div>
                 </div>
-                <div class="row px-3 mb-3">
-                    <div class="col-md-1">
-                        <input type="submit" class="btn btn-warning text-light" value="Simpan">
+                <div class="row">
+                <div class="col-md-1">
+                        <input type="submit" class="btn btn-warning text-light" value="simpan">
                     </div>
                     <div class="col-md-1">
                         <a href="{{route('pelanggan.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                     </div>
                 </div>
             </form>
-            </div>
         </div>
     </div>
 </main>

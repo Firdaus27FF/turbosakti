@@ -25,7 +25,7 @@
                                     </ul>
                                 </div><br />
                                 @endif
-                                <form method="post" action="{{ route('jenis.update', $produk->id ) }}">
+                                <form method="post" action="{{ route('jenis.update', $produk->id ) }}" enctype="multipart/form-data">
                                     <div class="form-group">
                                         @csrf
                                         @method('PATCH')
@@ -40,9 +40,9 @@
                                         <label for="cases">Harga Jual :</label>
                                         <input type="text" class="form-control mb-3" name="price" value="{{ $produk->harga_jual }}"/>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                                <a href="" type="submit" class="btn btn-warning text-light">Update Data</a>
+                                    <div class="row ">
+                                        <div class="col-md-1">
+                                            <input type="submit" class="btn btn-warning text-light" value="Update">
                                         </div>
                                         <div class="col-md-1">
                                             <a href="{{route('jenis.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
