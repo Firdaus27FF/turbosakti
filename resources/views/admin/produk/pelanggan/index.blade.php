@@ -35,9 +35,9 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Nama</th>
-                                            <th>Alamat</th>
-                                            <th>No. Tlp</th>
+                                            <th class="text-center">Nama</th>
+                                            <th class="text-center">Alamat</th>
+                                            <th class="text-center">No. Tlp</th>
                                             <th class="text-center">Aksi</th>
                                         </tr>
                                     </tfoot>
@@ -47,7 +47,7 @@
                                             <td>{{ $p->nama }}</td>
                                             <td>{{ $p->alamat }}</td>
                                             <td>{{ $p->no_tlp }}</td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a href="{{ route('pelanggan.edit',$p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('pelanggan.destroy', $p->id)}}" method="post" style="display:inline">
                                                     @method('delete')

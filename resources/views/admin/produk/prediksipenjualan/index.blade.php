@@ -27,10 +27,10 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>jadwal</th>
-                                            <th>Hasil Jumlah Produk</th>
-                                            <th>Hasil Bersih</th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">jadwal</th>
+                                            <th class="text-center">Hasil Jumlah Produk</th>
+                                            <th class="text-center">Hasil Bersih</th>
                                             <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
@@ -50,7 +50,7 @@
                                             <td>{{ $p->jadwal }}</td>
                                             <td>{{ $p->hasil_jumlah_produk }}</td>
                                             <td>{{ $p->hasil_bersih }}</td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a href="{{ route('prediksipenjualan.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('prediksipenjualan.destroy', $p->id)}}" method="post" style="display:inline">
                                                     @csrf

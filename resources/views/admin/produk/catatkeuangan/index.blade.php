@@ -50,7 +50,7 @@
                                             <td>{{ $p->tanggal }}</td>
                                             <td>{{ $p->jumlah_pemasukan }}</td>
                                             <td>{{ $p->jumlah_pengeluaran }}</td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a href="{{ route('catatkeuangan.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('catatkeuangan.destroy', $p->id)}}" method="post" style="display:inline">
                                                     @csrf

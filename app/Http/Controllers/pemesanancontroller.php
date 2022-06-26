@@ -67,7 +67,9 @@ class pemesanancontroller extends Controller
      */
     public function show($id)
     {
-        //
+        $pemesanan = Pemesanan::findOrFail($id);
+
+        return view('admin.produk.pemesanan.show', compact('pemesanan'));
     }
 
     /**

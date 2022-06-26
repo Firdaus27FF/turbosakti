@@ -27,22 +27,13 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Gambar</th>
-                                            <th>Rasa</th>
-                                            <th>Harga Jual</th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">Gambar</th>
+                                            <th class="text-center">Rasa</th>
+                                            <th class="text-center">Harga Jual</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Gambar</th>
-                                            <th>Rasa</th>
-                                            <th>Harga Jual</th>
-                                            <th class="text-center">Action</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         @foreach($produk as $p)
                                         <tr>
@@ -52,7 +43,7 @@
                                             </td>
                                             <td>{{ $p->rasa }}</td>
                                             <td>{{ $p->harga_jual }}</td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a href="{{ route('jenis.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('jenis.destroy', $p->id)}}" method="post" style="display:inline">
                                                     @csrf

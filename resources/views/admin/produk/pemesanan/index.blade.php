@@ -39,13 +39,13 @@
                                     </thead>
                                     <tfoot>
                                     <tr>
-                                            <th>No</th>
-                                            <th>Nama Order</th>
-                                            <th>Tanggal</th>
-                                            <th>Nama Produk</th>
-                                            <th>Jumlah</th>
-                                            <th>Harga</th>
-                                            <th>Total Harga</th>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">Nama Order</th>
+                                            <th class="text-center">Tanggal</th>
+                                            <th class="text-center">Nama Produk</th>
+                                            <th class="text-center">Jumlah</th>
+                                            <th class="text-center">Harga</th>
+                                            <th class="text-center">Total Harga</th>
                                             <th class="text-center">Aksi</th>
                                         </tr>
                                     </tfoot>
@@ -59,8 +59,9 @@
                                             <td>{{ $p->jumlah }}</td>
                                             <td>{{ $p->harga }}</td>
                                             <td>{{ $p->total_harga }}</td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a href="{{ route('pemesanan.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
+                                                <a href="{{ route('pemesanan.show', $p->id)}}" class="btn btn-primary"><ion-icon name="info-circle-outline"></ion-icon></a>
                                                 <form action="{{ route('pemesanan.destroy', $p->id)}}" method="post" style="display:inline">
                                                     @csrf
                                                     @method('DELETE')

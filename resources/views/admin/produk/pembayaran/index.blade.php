@@ -27,10 +27,10 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nama Order</th>
-                                            <th>Tanggal</th>
-                                            <th>Bayar</th> 
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">Nama Order</th>
+                                            <th class="text-center">Tanggal</th>
+                                            <th class="text-center">Bayar</th> 
                                             <th class="text-center">Aksi</th>
                                        </tr>
                                     </thead>
@@ -50,7 +50,7 @@
                                             <td>{{ $p->nama_order }}</td>
                                             <td>{{ $p->tanggal }}</td>
                                             <td>{{ $p->bayar }}</td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a href="{{ route('pembayaran.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('pembayaran.destroy', $p->id)}}" method="post" style="display:inline">
                                                     @csrf
