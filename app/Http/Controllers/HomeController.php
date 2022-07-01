@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('admin.dashboard.dashboard');
     }
+
+    public function logout(Request $request)
+    { 
+        return redirect('auth.password.login');
+    }
 }

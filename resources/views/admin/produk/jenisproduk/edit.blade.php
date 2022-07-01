@@ -7,53 +7,53 @@
 
 @section('content')
 <main>
-                    <div class="container-fluid px-4">
-                        <div class="row">
-                            <div class="col-md-6 position-relative">
-                            <h2 class="mt-1 text-warning">Jenis Product</h2>
-                            </div>                        
+    <div class="container-fluid px-4">
+        <div class="row">
+            <div class="col-md-6 position-relative">
+            <h2 class="mt-1 text-warning">Jenis Product</h2>
+            </div>                        
+        </div>
+            <div class="card mb-4">
+            <div class="card-header">
+            <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div><br />
+                @endif
+                <form method="POST" action="{{ route('jenis.update',$produk->id) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PATCH')    
+                <div class="form-group">
+                        <label for="country_name">Gambar :</label>
+                        <input type="file" class="form-control mb-3" name="gambar" placeholder="image"value="{{ $produk->gambar }}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="cases">Rasa :</label>
+                        <input type="text" class="form-control mb-3" name="rasa" value="{{ $produk->rasa }}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="cases">Harga Jual :</label>
+                        <input type="text" class="form-control mb-3" name="harga_jual" value="{{ $produk->harga_jual }}"/>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-1">
+                        <button type="submit" class="btn btn-md btn-warning text-light">UPDATE</button>
                         </div>
-                            <div class="card mb-4">
-                            <div class="card-header">
-                            <div class="card-body">
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div><br />
-                                @endif
-                                <form method="post" action="{{ route('jenis.update', $produk->id ) }}" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        @csrf
-                                        @method('PATCH')
-                                        <label for="country_name">Gambar :</label>
-                                        <input type="file" class="form-control mb-3" name="image" placeholder="image"value="{{ $produk->gambar }}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cases">Rasa :</label>
-                                        <input type="text" class="form-control mb-3" name="price" value="{{ $produk->rasa }}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cases">Harga Jual :</label>
-                                        <input type="text" class="form-control mb-3" name="price" value="{{ $produk->harga_jual }}"/>
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-md-1">
-                                            <input type="submit" class="btn btn-warning text-light" value="Update">
-                                        </div>
-                                        <div class="col-md-1">
-                                            <a href="{{route('jenis.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
-                                        </div>
-                                    </div>
-                                </form>
-                                </div>                                
-                            </div>
+                        <div class="col-md-1">
+                            <a href="{{route('jenis.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>
                         </div>
                     </div>
-                </main>
+                </form>
+                </div>                                
+            </div>
+        </div>
+    </div>
+</main>
 @endsection
 
 @section('js')

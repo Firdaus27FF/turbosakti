@@ -24,8 +24,8 @@
     <!-- small box -->
     <div class="small-box bg-turbo">
     <div class="inner">
-        <h5>Jumlah Pengeluaran</h5>
-        <p>500000<sup style="font-size: 20px"></sup></p>
+        <h5>Jumlah Pemasukan</h5>
+        <p>40000000<sup style="font-size: 20px"></sup></p>
     </div>
     <div class="icon">
         <i class="ion ion-stats-bars"></i>
@@ -38,8 +38,8 @@
     <!-- small box -->
     <div class="small-box bg-turbo">
     <div class="inner">
-        <h5>Jumlah Pemasukan</h5>
-        <p>40000000<sup style="font-size: 20px"></sup></p>
+        <h5>Jumlah Pengeluaran</h5>
+        <p>500000<sup style="font-size: 20px"></sup></p>
     </div>
     <div class="icon">
         <i class="ion ion-person-add"></i>
@@ -52,8 +52,8 @@
     <!-- small box -->
     <div class="small-box bg-turbo">
     <div class="inner">
-        <h5>User</h5>
-        <p>3    <sup style="font-size: 20px"></sup></p>
+        <h5>User Pelanggan</h5>
+        <p>4<sup style="font-size: 20px"></sup></p>
     </div>
     <div class="icon">
         <i class="ion ion-pie-graph"></i>

@@ -82,7 +82,7 @@ html, body {
 }
 
 body {
-  line-height: 24px;
+  line-height: 15px;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -978,7 +978,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .header_middle {
   padding: 5px 0;
-  background: #ffffff;
+  background: #f89500;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header_middle {
@@ -995,7 +995,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: flex;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end;
   align-items: center;
 }
 @media only screen and (max-width: 767px) {

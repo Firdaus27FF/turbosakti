@@ -29,7 +29,7 @@
                                         <tr>
                                             <th class="text-center">No</th>
                                             <th class="text-center">Gambar</th>
-                                            <th class="text-center">Rasa</th>
+                                            <th class="text-center">Rasa </th>
                                             <th class="text-center">Harga Jual</th>
                                             <th class="text-center">Action</th>
                                         </tr>
@@ -39,7 +39,7 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>
-                                                <img src="{{ asset('image/'.$p->gambar) }}" width="100" height="100">
+                                                <img src="{{ url('storage/image/'.$p->gambar) }}" width="100" height="100">
                                             </td>
                                             <td>{{ $p->rasa }}</td>
                                             <td>{{ $p->harga_jual }}</td>

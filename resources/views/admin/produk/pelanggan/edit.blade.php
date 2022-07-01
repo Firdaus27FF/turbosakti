@@ -44,8 +44,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="cases">No. Telp :</label>
-                                <input type="text" class="form-control mb-3" name="no_tlp"
-                                    value="{{ $pelanggan->no_tlp }}" />
+                                <input type="text" class="form-control mb-3" name="no_telp"
+                                    value="{{ $pelanggan->no_telp }}" />
                             </div>
                             <div class="row ">
                                 <div class="col-md-1">

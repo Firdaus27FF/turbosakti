@@ -15,11 +15,11 @@ class Pemesanan extends Model
 
     public function pelanggan()
     {
-        return $this->belongsTo(datapelanggan::class, 'pelanggan_id');
+        return $this->belongsTo(detailpelanggan::class, 'pelanggan_id');
     }
 
     public function produk()
     {
-        return $this->belongsTo(jenisproduk::class, 'produk_id');
+        return $this->belongsTo(JenisProduk::class, 'produk_id');
     }
 }

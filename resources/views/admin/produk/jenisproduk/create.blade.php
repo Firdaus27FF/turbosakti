@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="card mb-4">
-            <form action="{{ route('jenis.store')}}" method="POST">
+            <form action="{{ route('jenis.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-header">
                 <div class="card-body">
@@ -31,7 +31,7 @@
                 </ul>
             </div><br />
             @endif
-            <form method="post" action="{{ route('jenis.index') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('jenis.index') }}" enctype="multipart/form-data">
                 <div class="form-group">
                     @csrf
                     <label>Gambar :</label>
@@ -44,7 +44,7 @@
             </div>
             <div class="row">
                 <div class="col-md-1">
-                    <input type="submit" class="btn btn-warning text-light" value="simpan">
+                <button type="submit" class="btn btn-md btn-warning text-light">submit</button>
                 </div>
                 <div class="col-md-1">
                     <a href="{{route('jenis.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

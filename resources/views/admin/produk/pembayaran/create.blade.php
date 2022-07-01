@@ -45,17 +45,21 @@
                         <div class="form-group">
                         @csrf
                         <div class="form-group">
-                    <label>Nama Order</label>
-                    <input type="text" class="form-control mb-3">
+                        <label>Nama Order :</label>
+                    <select name="pelanggan_id"class="form-control mb-3">
+                        @foreach($pelanggan as $p)
+                            <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                        @endforeach
+                    </select>
                     <label>Tanggal</label>
-                    <input type="date" class="form-control mb-3">
+                    <input type="date" class="form-control mb-3" name="tanggal">
                     <label>Bayar</label>
-                    <input type="text" class="form-control mb-3">
+                    <input type="text" class="form-control mb-3" name="bayar">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-1">
-                        <a href="" type="submit" class="btn btn-warning text-light">Simpan</a>
+                        <input type="submit" class="btn btn-warning text-light" value="Simpan">
                 </div>
                 <div class="col-md-1">
                     <a href="{{route('pembayaran.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

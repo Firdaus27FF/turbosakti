@@ -12,11 +12,11 @@ class Pembayaran extends Model
 
     protected $table ='pembayaran';
     protected $primarykey ='id';
-    protected $fillable = ['id', 'nama_order','pelanggan_id', 'tanggal', 'bayar'];
+    protected $fillable = ['id','pelanggan_id', 'tanggal', 'bayar'];
 
 
     public function pelanggan() 
     {
-        return $this->belongsTo(datapelanggan::class, 'pelanggan_id');
+        return $this->belongsTo(detailpelanggan::class, 'pelanggan_id');
     }
 }

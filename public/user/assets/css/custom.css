@@ -264,7 +264,7 @@ img {
 
 
 section.shipping_area {
-    padding: 40px 0;
+    padding: 10px 0;
     color: #fff;
     background: #f89500;
 }
@@ -437,14 +437,14 @@ section.shipping_area {
     font-weight: 700;
     font-size: 13px;
     text-transform: uppercase;
-    color: #1D1678;
+    color: #f89500;
     line-height: 1;
     float: left;
     margin-bottom: 15px;
 }
 
 .account-content a:hover {
-    border-bottom: 2px solid #1D1678;
+    border-bottom: 2px solid #f89500;
 }
 
 .account-content a + a {
@@ -460,7 +460,7 @@ section.shipping_area {
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #1D1678;
+    color: #f89500;
     margin-bottom: 3px;
 }
 .single-acc-field label[for="checkbox"] {
@@ -483,12 +483,12 @@ section.shipping_area {
 }
 
 .single-acc-field input:focus, .single-acc-field textarea:focus {
-    border-color: #1D1678;
+    border-color: #f89500;
 }
 
 
 .single-acc-field button {
-    background: #1D1678;
+    background: #f89500;
     color: #fff;
     border: 0;
     padding: 12px 32px;
@@ -499,7 +499,7 @@ section.shipping_area {
 }
 
 .single-acc-field button:hover {
-    background: #FA5252;
+    background: #fa1d00f8;
 }
 
 .account-thumb {
@@ -537,7 +537,7 @@ section.shipping_area {
     padding-left: 32px;
     margin-bottom: 20px;
     font-weight: 400;
-    color: #1D1678;
+    color: #f89500;
     cursor: pointer;
   }
   
@@ -548,7 +548,7 @@ section.shipping_area {
     display: block;
     width: 20px;
     height: 20px;
-    border: 2px solid #1D1678;
+    border: 2px solid #f89500;
     position: absolute;
     left: 0;
     top: 0;
@@ -613,7 +613,7 @@ section.shipping_area {
 }
 
 .search_container form, .search_box button {
-    border-radius: 30px;
+    border-radius: 0px;
 }
 .single_slider {
     height: 750px;

@@ -28,12 +28,12 @@
           <div class="col-md-7">
             <h3>Welcome To Website Turbo Sakti Manding</strong></h3>
             <div>
-                <h1>login</h1>
+                <h1>log In </h1>
             </div>
             <form action="{{ route('login') }}" method="POST">
               @csrf
               <div class="form-group first">
-                <label for="email">{{ __('Email Address') }}</label>
+                <label for="email">{{ __('Email') }}</label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan email" id="email" name="email">
                 @error('email')
                     <span class="invalid-feedback" role="alert">

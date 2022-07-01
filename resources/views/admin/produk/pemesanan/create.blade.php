@@ -45,23 +45,23 @@
                         <div class="form-group">
                         @csrf
                         <div class="form-group">
-                    <label>Nama Order</label>
+                    <label>Nama Order :</label>
                     <select name="pelanggan_id"class="form-control mb-3">
                         @foreach($pelanggan as $p)
                             <option value="{{ $p->id }}">{{ $p->nama }}</option>
                         @endforeach
                     </select>
-                    <label>Tanggal</label>
+                    <label>Tanggal :</label>
                     <input type="date" class="form-control mb-3" name="tanggal">
-                    <label>Rasa Produk</label>
+                    <label>Rasa Produk :</label>
                     <select name="p" class="form-control mb-3" id="rasa">
                         @foreach($produk as $row)
-                            <option value="">Select Flavour</option>
+                            <option value="">Pilih Rasa</option>
                             <option value="{{ $row->id }}">{{ $row->rasa }}</option>
                         @endforeach
                         <input type="text" hidden name="produk_id" id="produk_id">
                     </select>
-                    <label>Jumlah</label>
+                    <label>Jumlah :</label>
                     <select name="jumlah" id="jumlah" class="form-control mb-3">
                         <option value="1">1  ball</option>
                         <option value="2">2  ball</option>

@@ -1,5 +1,22 @@
 @extends('users.app')
 @section ('content')
+
+<div class="breadcrumbs_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="{{('users')}}">home</a></li>
+                            <li>Detail Produk</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+</div>
+
 <div class="product_details mt-60 mb-60">
         <div class="container">
             <div class="row">

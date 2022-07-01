@@ -47,7 +47,7 @@
                                     @foreach($pembayaran as $p)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $p->nama_order }}</td>
+                                            <td>{{ $p->pelanggan->nama }}</td>
                                             <td>{{ $p->tanggal }}</td>
                                             <td>{{ $p->bayar }}</td>
                                             <td class="text-center">

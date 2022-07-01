@@ -101,7 +101,7 @@ class stokprodukcontroller extends Controller
      */
     public function destroy($id)
     {
-        $stok = jenisproduk::findOrFail($id);
+        $stok = stokproduk::findOrFail($id);
         $stok->delete();
 
         return back()->with('success', 'Data sudah di hapus');

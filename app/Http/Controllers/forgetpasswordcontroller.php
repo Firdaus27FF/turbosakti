@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\DetailPelanggan;
 
-class pelanggancontroller extends Controller
+class forgetpasswordcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,8 @@ class pelanggancontroller extends Controller
      */
     public function index()
     {
-        $datapelanggan = DetailPelanggan::all();
-        $no = 1;
-        return view('admin.produk.pelanggan.index', compact('datapelanggan', 'no'));
+        return view('users.forgetpassword');
+
     }
 
     /**
@@ -26,7 +24,7 @@ class pelanggancontroller extends Controller
      */
     public function create()
     {
-        return view('admin.produk.pelanggan.create');
+        //
     }
 
     /**
@@ -37,14 +35,11 @@ class pelanggancontroller extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        DetailPelanggan::create($data);
-   
-        return redirect('/pelanggan')->with('success', 'Data sudah tersimpan');
+        //
     }
 
     /**
-     * Display the specified resourc)e.
+     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -62,8 +57,7 @@ class pelanggancontroller extends Controller
      */
     public function edit($id)
     {
-        $pelanggan = DetailPelanggan::findOrFail($id);
-        return view('admin.produk.pelanggan.edit', compact('pelanggan'));
+        //
     }
 
     /**
@@ -75,12 +69,7 @@ class pelanggancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pelanggan = DetailPelanggan::findOrFail($id);
-        $data     = $request->all();
-
-        $pelanggan->update($data);
-
-        return redirect()->route('pelanggan.index')->with('success', 'Data selesai di update');
+        //
     }
 
     /**
@@ -91,10 +80,6 @@ class pelanggancontroller extends Controller
      */
     public function destroy($id)
     {
-        $pelanggan = DetailPelanggan::findOrFail($id);
-        $pelanggan->delete();
-
-        return back()->with('success', 'Data sudah di hapus');
-
+        //
     }
 }

@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="middel_right_info">
                                     <div class="header_wishlist">
-                                        <a href="#"><img src="{{ asset('user/assets/img/user.png')}}" alt=""  width="40" height="40"></a>
+                                        <a href="{{ route('logins.index')}}"><img src="{{ asset('user/assets/img/user.png')}}" alt=""  width="40" height="40"></a>
                                     </div>
                                     <!-- <div class="mini_cart_wrapper">
                                         <a href="javascript:void(0)"><img src="{{ asset('user/assets/img/shopping-bag.png')}}" alt="" width="40" height="40"></a>

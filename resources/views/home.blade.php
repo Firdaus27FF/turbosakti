@@ -15,7 +15,7 @@
                     @endif
 
                     <div>
-                    <a href= "{{ route('dashboard.index')}}"> {{ __('You are logged in!') }}
+                    <a href= "{{ route('login')}}"> {{ __('You Have To Login!') }}
                     </div>
                 </div>
             </div>

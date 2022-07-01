@@ -68,8 +68,7 @@ class pemesanancontroller extends Controller
     public function show($id)
     {
         $pemesanan = Pemesanan::findOrFail($id);
-
-        return view('admin.produk.pemesanan.show', compact('pemesanan'));
+        return View('admin.produk.pemesanan.show')->with('pemesanan', $pemesanan);
     }
 
     /**
@@ -80,9 +79,10 @@ class pemesanancontroller extends Controller
      */
     public function edit($id)
     {
+        $pelanggan = DetailPelanggan::all();
+        $produk = JenisProduk::all();
         $pemesanan = Pemesanan::findOrFail($id);
-
-        return view('admin.produk.pemesanan.edit', compact('pemesanan'));
+        return view('admin.produk.pemesanan.edit', compact('pelanggan','produk', 'pemesanan'));
     }
 
     /**
@@ -95,9 +95,8 @@ class pemesanancontroller extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'nama_order'    => 'required',
+            'pelanggan_id'    => 'required',
             'tanggal'       => 'required',
-            'nama_produk'   => 'required',
             'jumlah'        => 'required',
             'harga'         => 'required',
             'total_harga'   => 'required',
@@ -106,15 +105,14 @@ class pemesanancontroller extends Controller
         $pemesanan = Pemesanan::findOrFail($id);
 
         $pemesanan->delete([
-            'nama_order'    => 'required',
+            'pelanggan_id'    => 'required',
             'tanggal'       => 'required',
-            'nama_produk'   => 'required',
             'jumlah'        => 'required',
             'harga'         => 'required',
             'total_harga'   => 'required',
         ]);
 
-        return redirect('pemesanan.index')->with('success', 'Data selesai di update');
+        return redirect('pemesanan')->with('success', 'Data selesai di update');
     }
 
     /**

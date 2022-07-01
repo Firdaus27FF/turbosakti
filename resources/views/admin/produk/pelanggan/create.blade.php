@@ -41,7 +41,7 @@
                             </ul>
                         </div><br />
                         @endif
-                        <form method="post" action="{{ route('stok.index') }}">
+                        <form method="post" action="{{ route('pelanggan.index') }}">
                         <div class="form-group">
                         @csrf
                         <div class="form-group">

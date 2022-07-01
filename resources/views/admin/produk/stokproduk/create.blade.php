@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-md-1">
-                        <input type="submit" class="btn btn-warning text-light" value="simpan">
+                    <button type="submit" class="btn btn-md btn-warning text-light">submit</button>
                 </div>
                 <div class="col-md-1">
                     <a href="{{route('stok.index')}}" type="button" class="btn btn-warning text-light">Kembali</a>

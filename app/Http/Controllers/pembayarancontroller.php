@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pembayaran;
+use App\Models\DetailPelanggan;
+
 
 class pembayarancontroller extends Controller
 {
@@ -26,7 +28,8 @@ class pembayarancontroller extends Controller
      */
     public function create()
     {
-        return view('admin.produk.pembayaran.create');
+        $pelanggan = DetailPelanggan::all();
+        return view('admin.produk.pembayaran.create', compact('pelanggan'));
     }
 
     /**
@@ -37,12 +40,10 @@ class pembayarancontroller extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nama_order' => 'required',
-            'tanggal' => 'required',
-            'bayar' => 'required'
-        ]);
-        $show = Pembayaran::create($validatedData);
+        $pelanggan  = $request->pelanggan_id;
+        $tanggal    = $request->tanggal;
+        $bayar      = $request->bayar;
+        Pembayaran::create(['pelanggan_id'=>$pelanggan, 'tanggal'=>$tanggal, 'bayar'=>$bayar]);
    
         return redirect('/pembayaran')->with('success', 'Data sudah tersimpan');
     }
@@ -67,8 +68,8 @@ class pembayarancontroller extends Controller
     public function edit($id)
     {
         $pembayaran = Pembayaran::findOrFail($id);
-
-        return view('admin.produk.pembayaran.edit', compact('pembayaran'));
+        $pelanggan = DetailPelanggan::select('id','nama')->get();
+        return view('admin.produk.pembayaran.edit', compact('pembayaran', 'pelanggan'));
     }
 
     /**
@@ -80,14 +81,18 @@ class pembayarancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'nama_order' => 'required',
-            'tanggal' => 'required',
-            'bayar' => 'required',
+        $this->validate($request,[
+            'pelanggan_id'    => 'required',
+            'tanggal'       => 'required',
+            'bayar'         => 'required',
         ]);
-        Pembayaran::whereId($id)->update($validatedData);
+        $data = $request->all();
 
-        return redirect('/pembayaran')->with('success', 'Data selesai di update');
+        $pembayaran = Pembayaran::findOrFail($id);
+
+        $pembayaran->update($data);
+
+        return redirect('pembayaran')->with('success', 'Data selesai di update');
     }
 
     /**

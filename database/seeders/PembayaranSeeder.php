@@ -16,13 +16,11 @@ class PembayaranSeeder extends Seeder
     {
         pembayaran::create([
             'pelanggan_id'=>'1',
-            'nama_order' => 'Ach. Dani',
             'tanggal'=>'2022-01-03',
             'bayar'=>'5000'
         ]);
         pembayaran::create([
             'pelanggan_id'=>'1',
-            'nama_order' => 'Ach. Ramdhani',
             'tanggal'=>'2022-02-10',
             'bayar'=>'5000'
         ]);
