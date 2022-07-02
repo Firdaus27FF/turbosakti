@@ -56,7 +56,7 @@
                   <input type="checkbox" checked="checked" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}/>
                   <div class="control__indicator"></div>
                 </label>
-                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+                <span class="ml-auto"><a href="{{ route('register')}}" class="register">Register</a></span> 
               </div>
               <input type="submit" value="Log In" class="btn btn-block btn-warning">
             </form>

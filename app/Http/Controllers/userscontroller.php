@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 
-class dashboardcontroller extends Controller
+class userscontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class dashboardcontroller extends Controller
      */
     public function index()
     {
-        $user = User::count();
-        return view('admin.dashboard.dashboard', compact('user'));
+        return view('users.index');
     }
 
     /**

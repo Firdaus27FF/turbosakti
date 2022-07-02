@@ -53,7 +53,7 @@
     <div class="small-box bg-turbo">
     <div class="inner">
         <h5>User Pelanggan</h5>
-        <p>4<sup style="font-size: 20px"></sup></p>
+        <p><sup style="font-size: 20px">{{ $user }}</sup></p>
     </div>
     <div class="icon">
         <i class="ion ion-pie-graph"></i>

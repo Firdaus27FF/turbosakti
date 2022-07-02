@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.dashboard');
+        $auth = auth()->user();
+        if($auth->hasRole('admin'))
+        {
+            $user = User::count();
+            return view('admin.dashboard.dashboard', compact('user'));
+        }else{
+            return view('users.index');
+        }
     }
 
     public function logout(Request $request)

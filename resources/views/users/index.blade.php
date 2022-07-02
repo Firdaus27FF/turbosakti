@@ -106,7 +106,7 @@
                             </div>
                             <div class="tranding-pro-price">
                                 <div class="price_box">
-                                    <span class="current_price">Rp. 2.000</span>
+                                    <span class="current_price">Rp. 5.000</span>
                                 </div>
                             </div>
                         </a>
@@ -123,7 +123,7 @@
                             </div>
                             <div class="tranding-pro-price">
                                 <div class="price_box">
-                                    <span class="current_price">Rp. 58.000</span>
+                                    <span class="current_price">Rp. 5.000</span>
                                 </div>
                             </div>
                         </a>

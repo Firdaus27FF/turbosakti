@@ -27,22 +27,13 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">No</th>
-                                            <th class="text-center">jadwal</th>
-                                            <th class="text-center">Hasil Jumlah Produk</th>
-                                            <th class="text-center">Hasil Bersih</th>
-                                            <th class="text-center">Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
                                             <th>No</th>
                                             <th>jadwal</th>
                                             <th>Hasil Jumlah Produk</th>
                                             <th>Hasil Bersih</th>
-                                            <th class="text-center">Aksi</th>
+                                            <th class="text-center">Action</th>
                                         </tr>
-                                    </tfoot>
+                                    </thead>
                                     <tbody>
                                         @foreach($prediksipenjualan as $p)
                                         <tr>
@@ -51,11 +42,11 @@
                                             <td>{{ $p->hasil_jumlah_produk }}</td>
                                             <td>{{ $p->hasil_bersih }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('prediksipenjualan.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('prediksipenjualan.destroy', $p->id)}}" method="post" style="display:inline">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
+                                                <a href="{{ route('prediksipenjualan.edit', $p->id)}}" class="btn btn-warning"><i class="fas fa-pencil"></i></a>
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></button>
+                                                @csrf
+                                                @method('DELETE')
                                                 </form>    
                                             </td>
                                         </tr>

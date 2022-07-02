@@ -30,17 +30,9 @@
                                             <th>Nama</th>
                                             <th>Alamat</th>
                                             <th>No. Tlp</th>
-                                            <th class="text-center">Aksi</th>
+                                            <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th class="text-center">Nama</th>
-                                            <th class="text-center">Alamat</th>
-                                            <th class="text-center">No. Tlp</th>
-                                            <th class="text-center">Aksi</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         @foreach($datapelanggan as $p)
                                         <tr>
@@ -48,11 +40,11 @@
                                             <td>{{ $p->alamat }}</td>
                                             <td>{{ $p->no_tlp }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('pelanggan.edit',$p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('pelanggan.destroy', $p->id)}}" method="post" style="display:inline">
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
+                                                <a href="{{ route('pelanggan.edit',$p->id)}}" class="btn btn-warning"><i class="fas fa-pencil"></i></a>
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></button>
+                                                @csrf
+                                                @method('DELETE')
                                                 </form>
                                             </td>
                                         </tr>

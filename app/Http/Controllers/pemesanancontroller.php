@@ -79,8 +79,8 @@ class pemesanancontroller extends Controller
      */
     public function edit($id)
     {
-        $pelanggan = DetailPelanggan::all();
         $produk = JenisProduk::all();
+        $pelanggan = DetailPelanggan::select('id','nama')->get();
         $pemesanan = Pemesanan::findOrFail($id);
         return view('admin.produk.pemesanan.edit', compact('pelanggan','produk', 'pemesanan'));
     }
@@ -95,22 +95,18 @@ class pemesanancontroller extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'pelanggan_id'    => 'required',
+            'pelanggan_id'  => 'required',
             'tanggal'       => 'required',
             'jumlah'        => 'required',
             'harga'         => 'required',
             'total_harga'   => 'required',
         ]);
+
+        $data = $request->all();
 
         $pemesanan = Pemesanan::findOrFail($id);
 
-        $pemesanan->delete([
-            'pelanggan_id'    => 'required',
-            'tanggal'       => 'required',
-            'jumlah'        => 'required',
-            'harga'         => 'required',
-            'total_harga'   => 'required',
-        ]);
+        $pemesanan->update($data);
 
         return redirect('pemesanan')->with('success', 'Data selesai di update');
     }

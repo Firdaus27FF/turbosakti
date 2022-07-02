@@ -31,7 +31,7 @@
                             <th>Nama Order</th>
                             <th>Tanggal</th>
                             <th>Rasa Produk</th>
-                            <th class="text-center">Aksi</th>
+                            <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,9 +43,9 @@
                             <td>{{ $p->produk->rasa }}</td>
                             <td class="text-center">
                                 <form action="{{ route('pemesanan.destroy', $p->id)}}" method="post" style="display:inline">
-                                <a href="{{ route('pemesanan.show', $p->id)}}" class="btn btn-primary"><ion-icon name="eyes-outline"></ion-icon></a>
-                                <a href="{{ route('pemesanan.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
+                                <a href="{{ route('pemesanan.show', $p->id)}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                <a href="{{ route('pemesanan.edit', $p->id)}}" class="btn btn-warning"><i class="fas fa-pencil"></i></a>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></button>
                                 @csrf
                                 @method('DELETE')
                             </form>    

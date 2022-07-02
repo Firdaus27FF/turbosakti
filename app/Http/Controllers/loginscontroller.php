@@ -13,7 +13,7 @@ class loginscontroller extends Controller
      */
     public function index()
     {
-        return view('users.logins');
+        return view('users.index');
     }
 
     /**

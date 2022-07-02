@@ -27,22 +27,13 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">No</th>
-                                            <th class="text-center">Jumlah</th>
-                                            <th class="text-center">Tanggal Produksi</th>
-                                            <th class="text-center">Harga Per Ball</th>
-                                            <th class="text-center">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
                                             <th>No</th>
                                             <th>Jumlah</th>
                                             <th>Tanggal Produksi</th>
                                             <th>Harga Per Ball</th>
                                             <th class="text-center">Action</th>
                                         </tr>
-                                    </tfoot>
+                                    </thead>
                                     <tbody>
                                         @foreach($stok as $p)
                                         <tr>
@@ -51,11 +42,11 @@
                                             <td>{{ $p->tanggal_produksi }}</td>
                                             <td>{{ $p->harga_per_ball }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('stok.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('stok.destroy', $p->id)}}" method="post" style="display:inline">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
+                                                <a href="{{ route('stok.edit', $p->id)}}" class="btn btn-warning"><i class="fas fa-pencil"></i></a>
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></button>
+                                                @csrf
+                                                @method('DELETE')
                                                 </form>    
                                             </td>
                                         </tr>

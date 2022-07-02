@@ -34,15 +34,6 @@
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Tanggal</th>
-                                            <th>Jumlah Pemasukan</th>
-                                            <th>Jumlah Pengeluaran</th>
-                                            <th class="text-center">Action</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         @foreach($keuangan as $p)
                                         <tr>
@@ -51,11 +42,11 @@
                                             <td>{{ $p->jumlah_pemasukan }}</td>
                                             <td>{{ $p->jumlah_pengeluaran }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('catatkeuangan.edit', $p->id)}}" class="btn btn-warning"><ion-icon name="pencil-outline"></ion-icon></a>
                                                 <form action="{{ route('catatkeuangan.destroy', $p->id)}}" method="post" style="display:inline">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"> <ion-icon name="trash-outline"></ion-icon></button>
+                                                <a href="{{ route('catatkeuangan.edit', $p->id)}}" class="btn btn-warning"><i class="fas fa-pencil"></i></a>
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></button>
+                                                @csrf
+                                                @method('DELETE')
                                                 </form>    
                                             </td>
                                         </tr>

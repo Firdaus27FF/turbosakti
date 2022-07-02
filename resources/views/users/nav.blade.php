@@ -1,5 +1,4 @@
-<div class="off_canvars_overlay">
-            
+<div class="off_canvars_overlay"> 
     </div>
     <div class="Offcanvas_menu">
         <div class="container">
@@ -65,59 +64,25 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="middel_right_info">
-                                    <div class="header_wishlist">
-                                        <a href="{{ route('logins.index')}}"><img src="{{ asset('user/assets/img/user.png')}}" alt=""  width="40" height="40"></a>
-                                    </div>
-                                    <!-- <div class="mini_cart_wrapper">
-                                        <a href="javascript:void(0)"><img src="{{ asset('user/assets/img/shopping-bag.png')}}" alt="" width="40" height="40"></a>
-                                        <span class="cart_quantity">2</span>
-                                         <div class="mini_cart">
-                                            <div class="cart_item">
-                                               <div class="cart_img">
-                                                   <a href="#"><img src="{{ asset('user/assets/img/product/tranding-1.jpg')}}" alt=""></a>
-                                               </div>
-                                                <div class="cart_info">
-                                                    <a href="#">Original Rasa Bawang Putih</a>
-                                                    <p>Pesan : 1 X <span> Rp. 2.000 </span></p>    
-                                                </div>
-                                                <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="cart_item">
-                                               <div class="cart_img">
-                                                   <a href="#"><img src="{{ asset('user/assets/img/product/tranding-1.jpg')}}" alt=""></a>
-                                               </div>
-                                               <div class="cart_info">
-                                                    <a href="#">Original Rasa Bawang Putih</a>
-                                                    <p>Pesan : 1 X <span> Rp. 2.000 </span></p>    
-                                                </div>
-                                                <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="mini_cart_table">
-                                                <div class="cart_total">
-                                                    <span>Sub total:</span>
-                                                    <span class="price">Rp. 4.000</span>
-                                                </div>
-                                                <div class="cart_total mt-10">
-                                                    <span>total:</span>
-                                                    <span class="price">Rp. 4.000</span>
-                                                </div>
-                                            </div>
-
-                                            <div class="mini_cart_footer">
-                                               <div class="cart_button">
-                                                    <a href="cart.html">View cart</a>
-                                                </div>
-                                                <div class="cart_button">
-                                                    <a href="checkout.blade.php">Checkout</a>
-                                                </div>
-                                            </div>
+                                <img src="{{ asset('user/assets/img/user.png')}}" alt=""  width="40" height="40">
+                                <div class="user">
+                                    <div class="dropdown">
+                                        <a class="ropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <h4 class="uppercase">{{ auth()->user()->name}}</h4>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <form method="POST" action="{{ route('logout') }}">
+                                                @csrf
+                                                <button type="submit" class="btn btn-transparant">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                                                    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                                                    </svg>    
+                                                &nbsp;Logout</button>
+                                                <a class="bg-turbo"type="submit"></a>
+                                            </form>
                                         </div>
-                                    </div> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -130,27 +95,6 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-12 col-md-12">
-                            <!-- <div class="main_menu menu_position"> 
-                                <nav>  
-                                    <ul>
-                                        <li><a href="index-2.html">home</a></li>
-                                        <li><a href="product-details.html">Product</a></li>
-                                        
-                                        <li><a class="active" href="#">pages <i class="fa fa-angle-down"></i></a>
-                                            <ul class="sub_menu pages">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="contact.html">contact</a></li>
-                                                <li><a href="login.html">login</a></li>
-                                                <li><a href="register.html">register</a></li>
-                                                <li><a href="forget-password.html">Forget Password</a></li>
-                                                <li><a href="tracking.html">tracking</a></li>
-                                                <li><a href="checkout.html">checkout</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html"> Contact Us</a></li>
-                                    </ul>  
-                                </nav> 
-                            </div> -->
                         </div>
                     </div>
                 </div>

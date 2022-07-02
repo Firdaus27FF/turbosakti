@@ -52,7 +52,11 @@
                             <div class="product_variant quantity">
                                 <label>Kuantitas</label>
                                 <input min="1" max="100" value="1" type="number">
-                                <button class="button" type="submit">Langsung Beli Sekarang</button>  
+                                <div class="col-md-6 card-header text-end">
+                                    <a class="btn btn-warning mb-2 text-light" href="{{route('pemesanan.create')}}">
+                                        Langsung Beli Sekarang
+                                    </a>
+                                </div>                            
                             </div>                            
                         </form>
                     </div>
